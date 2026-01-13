@@ -1,0 +1,102 @@
+# AgentType - 包数据清单文件
+# 确保所有必要的非Python文件都包含在包中
+
+# 项目文档和配置
+include README.md
+include LICENSE
+include pyproject.toml
+include setup.py
+include requirements.txt
+include agentype_config.json
+include config.json
+
+# 文档目录
+recursive-include docs *.md
+
+# 管理脚本
+include manage.py
+
+# 配置目录
+recursive-include config *.json *.yaml *.yml *.py
+
+# 示例文件
+recursive-include examples *.py *.md *.json *.yaml
+
+# R脚本文件和数据 (AppAgent需要)
+recursive-include agentype/appagent/tools/r *.R *.r *.xlsx
+recursive-include agentype/appagent *.R *.r
+
+# 国际化文件
+recursive-include agentype/mainagent/locales *.json
+recursive-include agentype/subagent/locales *.json
+recursive-include agentype/dataagent/locales *.json
+recursive-include agentype/appagent/locales *.json
+
+# Prompts 模板文件
+recursive-include agentype/prompts *.py
+
+# 配置和数据文件
+recursive-include agentype/mainagent *.json *.yaml *.yml
+recursive-include agentype/subagent *.json *.yaml *.yml
+recursive-include agentype/dataagent *.json *.yaml *.yml
+recursive-include agentype/appagent *.json *.yaml *.yml
+
+# 模板和数据文件
+recursive-include agentype/mainagent/templates *
+recursive-include agentype/subagent/templates *
+recursive-include agentype/dataagent/templates *
+recursive-include agentype/appagent/templates *
+
+recursive-include agentype/mainagent/data *
+recursive-include agentype/subagent/data *
+recursive-include agentype/dataagent/data *
+recursive-include agentype/appagent/data *
+
+# 包初始化文件
+recursive-include agentype/mainagent *.py
+recursive-include agentype/subagent *.py
+recursive-include agentype/dataagent *.py
+recursive-include agentype/appagent *.py
+
+# 排除不需要的文件和目录
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude *.pyd
+global-exclude __pycache__
+global-exclude .git*
+global-exclude .DS_Store
+global-exclude *.so
+global-exclude *.dylib
+global-exclude *.dll
+
+# 排除输出和缓存目录
+prune outputs
+prune logs
+prune .claude
+prune __pycache__
+prune *.egg-info
+prune build
+prune dist
+prune .pytest_cache
+prune .mypy_cache
+prune .ruff_cache
+
+# 排除测试和开发文件
+prune tests
+exclude test_*.py
+exclude *_test.py
+exclude .coverage
+exclude .coveragerc
+exclude tox.ini
+exclude .tox
+
+# 排除IDE和编辑器文件
+exclude .vscode
+exclude .idea
+exclude *.swp
+exclude *.swo
+exclude *~
+
+# 排除系统文件
+exclude Thumbs.db
+exclude Desktop.ini

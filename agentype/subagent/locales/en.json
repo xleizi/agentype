@@ -1,0 +1,353 @@
+{
+  "mcp": {
+    "server": {
+      "starting": "🚀 Starting CellType MCP Server...",
+      "protocol": "📡 MCP Protocol: stdio",
+      "tool_count": "🔧 Tool Count: 10 tools",
+      "functions": "🧬 Function List:",
+      "tool_list": {
+        "get_gene_info": "   • get_gene_info - Retrieve gene information from NCBI",
+        "query_cellmarker": "   • query_cellmarker - Query CellMarker database",
+        "query_panglaodb": "   • query_panglaodb - Query PanglaoDB database",
+        "cellmarker_enrichment": "   • cellmarker_enrichment - CellMarker enrichment analysis",
+        "panglaodb_enrichment": "   • panglaodb_enrichment - PanglaoDB enrichment analysis",
+        "gene_enrichment_analysis": "   • gene_enrichment_analysis - GO and KEGG pathway analysis",
+        "get_cellmarker_tissues": "   • get_cellmarker_tissues - Get CellMarker tissue type list",
+        "get_panglaodb_organs": "   • get_panglaodb_organs - Get PanglaoDB organ type list",
+        "get_cellmarker_celltypes_by_tissue": "   • get_cellmarker_celltypes_by_tissue - Get CellMarker cell types by tissue",
+        "get_panglaodb_celltypes_by_organ": "   • get_panglaodb_celltypes_by_organ - Get PanglaoDB cell types by organ"
+      },
+      "separator": "────────────────────────────────────────────────────────────"
+    },
+    "import": {
+      "failed": "Import dependency failed: {error}",
+      "install_deps": "Please ensure required dependencies are installed",
+      "current_dir": "Current working directory: {path}",
+      "project_root": "Project root directory: {path}",
+      "python_path": "Python path: {paths}"
+    }
+  },
+  "gene": {
+    "detection": {
+      "species": "🔍 Auto-detected as {species} genes (uppercase ratio: {ratio:.2f})",
+      "species_human": "human",
+      "species_mouse": "mouse",
+      "converting": "🔍 Gene symbols to convert: {genes}",
+      "detected_species": "🧬 Auto-detected species: {species}",
+      "converted_success": "✅ {symbol} -> {gene_id}",
+      "converted_failed": "❌ Unable to convert gene symbol: {symbol}",
+      "conversion_failed": "⚠️ Gene symbol conversion failed: {error}",
+      "final_ids": "🎯 Final gene IDs for query: {ids}"
+    },
+    "info": {
+      "empty_list": "Gene ID/symbol list is empty",
+      "no_valid_ids": "No valid gene IDs available for query",
+      "no_results": "Failed to retrieve gene information, please check network connection and gene IDs/symbols",
+      "get_failed": "Failed to get gene information: {error}"
+    }
+  },
+  "tools": {
+    "call": {
+      "calling": "🔧 Calling tool: {name}({params})",
+      "success": "✅ Tool call successful, content length: {length} characters",
+      "failed": "❌ Tool call failed",
+      "no_action": "❌ No valid action found, stopping analysis"
+    }
+  },
+  "download": {
+    "file_exists": "File already exists ({size:.2f} MB): {path}",
+    "starting": "Downloading {url} (attempt {attempt}/{max_retries})",
+    "progress": "Download progress: {progress:.1f}% ({downloaded:.1f} MB)",
+    "downloaded": "Downloaded: {downloaded:.1f} MB",
+    "completed": "Download completed: {path} ({size:.2f} MB)",
+    "attempt_failed": "Download attempt {attempt} failed: {error}",
+    "waiting_retry": "Waiting {wait_time} seconds before retry...",
+    "unexpected_error": "Unexpected error during download: {error}",
+    "all_failed": "File download failed after {retries} attempts"
+  },
+  "species": {
+    "detector": {
+      "empty_genes": "Gene list is empty, defaulting to human",
+      "insufficient_genes": "Insufficient valid genes ({count} < {required}), defaulting to human",
+      "detected_human": "Detected human genes (uppercase ratio: {ratio:.2f})",
+      "detected_mouse": "Detected mouse genes (uppercase ratio: {ratio:.2f})",
+      "unknown_species": "Unknown species name: {species}, defaulting to human"
+    }
+  },
+  "cache": {
+    "init": "Cache directory initialized: {path}",
+    "cleared": "Cleared {count} cache files"
+  },
+  "analysis": {
+    "starting": "🧬 Starting analysis of gene list: {genes}",
+    "tissue_type": "🏥 Tissue type: {tissue}",
+    "system_prompt_length": "📋 System prompt length: {length} characters",
+    "user_query": "❓ User query: {query}",
+    "iteration": "--- Iteration {iteration} ---",
+    "current_messages": "Current message count",
+    "current_context_length": "Current context length",
+    "context_compression": "📊 {reason}, performing context compression...",
+    "streaming_enabled": "🌊 Iteration {iteration}, streaming enabled",
+    "ai_response_length": "🤖 AI response length: {length} characters",
+    "format_validation_failed": "⚠️ Response format validation failed: {issues}",
+    "format_validation_passed": "✅ Response format validation passed",
+    "analysis_completed": "✅ Analysis completed! Final cell type: {celltype}",
+    "final_answer_no_celltype": "⚠️ Found final_answer but no celltype tag",
+    "summary": {
+      "title": "🎯 Analysis Summary:",
+      "total_iterations": "   - Total iterations: {iterations}",
+      "final_celltype": "   - Final cell type: {celltype}",
+      "tool_calls": "   - Tool call count: {count}",
+      "context_summary": "   - Context summary: executed at iteration {threshold}",
+      "llm_stats": "   - LLM API call stats: {total} times",
+      "success_failure": "   - Success/Failure: {success}/{failure}",
+      "log_file": "   - Log file: {file}",
+      "stats_failed": "   - Failed to get log stats: {error}"
+    }
+  },
+  "openai": {
+    "request": "📤 OpenAI API request:",
+    "model": "   🤖 Model: {model}",
+    "message_count": "   💬 Message count: {count}",
+    "timeout": "   ⏰ Timeout: {timeout} seconds",
+    "streaming": "   🌊 Streaming: {enabled}",
+    "streaming_enabled": "Yes",
+    "streaming_disabled": "No",
+    "streaming_not_supported": "⚠️ Model may not support streaming, falling back to non-streaming",
+    "streaming_start": "🌊 Starting streaming output:",
+    "streaming_completed": "✅ Streaming completed ({chars} characters)",
+    "streaming_failed": "❌ Streaming processing failed: {error}",
+    "fallback_to_non_stream": "🔄 Falling back to non-streaming...",
+    "retry_non_stream": "📤 Retrying with non-streaming request...",
+    "non_stream_completed": "✅ Non-streaming request completed, response length: {length} characters",
+    "response": "📥 OpenAI API response:",
+    "response_length": "   📏 Response length: {length} characters"
+  },
+  "retry": {
+    "llm_retry": "🔄 Retrying LLM call {retry}/{max_retries}",
+    "last_response_issues": "❌ Last response issues: {issues}",
+    "retry_logged": "📝 Retry call logged (attempt {count})",
+    "retry_success": "✅ Retry successful! Response format correct",
+    "retry_failed": "❌ Retry {count} failed: {issues}",
+    "max_retries_reached": "❌ Maximum retries reached, using last response"
+  },
+  "context": {
+    "too_long": "🔄 Context too long, generating summary...",
+    "no_history": "⚠️ Insufficient conversation history for summary",
+    "summary_logged": "📝 Context summary logged",
+    "summary_completed": "✅ Context summary completed",
+    "original_messages": "   - Original message count: {count}",
+    "summarized_messages": "   - Summarized message count: {count}",
+    "summary_length": "   - Summary content length: {length} characters",
+    "simple_strategy": "🔧 Using simple strategy: keeping last 10 messages"
+  },
+  "content": {
+    "length_ok": "📝 Content length: {length} - keeping as is",
+    "length_need_process": "📝 Content length: {length} - needs processing",
+    "gene_info_too_long": "🧬 Detected get_gene_info result too long, trying to reduce gene count...",
+    "reduce_genes_success": "✅ Successfully reduced gene count, new content length: {length}",
+    "reduce_genes_failed": "⚠️ Failed to reduce gene count, continuing with other processing strategies...",
+    "generating_summary": "🔄 Content too long, generating summary...",
+    "keep_integrity": "🔧 Maintaining integrity and intelligently cleaning content",
+    "genes_already_few": "🚫 Gene count already minimal, cannot reduce further",
+    "reducing_gene_count": "🔄 Reducing gene count: {old} -> {new}",
+    "retained_genes": "📋 Retained genes: {genes}",
+    "recall_success": "✅ Recall successful, new content length: {length}",
+    "recall_failed": "❌ Recall failed",
+    "reduce_error": "❌ Error reducing gene count: {error}"
+  },
+  "database": {
+    "cellmarker": {
+      "species_not_exist": "Species '{species}' does not exist",
+      "tissue_not_exist": "Tissue '{tissue}' does not exist in {species}",
+      "celltype_not_exist": "Cell type '{celltype}' does not exist in {species}-{tissue}",
+      "enrichment_failed": "CellMarker enrichment analysis failed: {error}",
+      "query_failed": "CellMarker query failed: {error}",
+      "tissues_failed": "Failed to get CellMarker tissue types: {error}",
+      "celltypes_failed": "Failed to get CellMarker cell types: {error}"
+    },
+    "panglaodb": {
+      "species_not_exist": "Species '{species}' does not exist",
+      "organ_not_exist": "Organ '{organ}' does not exist in {species}",
+      "celltype_not_exist": "Cell type '{celltype}' does not exist in {species}-{organ}",
+      "species_not_supported": "Species '{species}' not supported, only supports HUMAN or MOUSE",
+      "enrichment_failed": "PanglaoDB enrichment analysis failed: {error}",
+      "query_failed": "PanglaoDB query failed: {error}",
+      "organs_failed": "Failed to get PanglaoDB organ types: {error}",
+      "celltypes_failed": "Failed to get PanglaoDB cell types: {error}"
+    },
+    "enrichment": {
+      "empty_genes": "Gene list is empty",
+      "analysis_failed": "Gene enrichment analysis failed: {error}",
+      "no_results": "Enrichment analysis returned no results, please check gene names or network connection"
+    }
+  },
+  "errors": {
+    "missing_tissue": "Please provide tissue type parameter",
+    "missing_organ": "Please provide organ type parameter",
+    "all_tissues_not_exist": "All specified tissue types do not exist: {tissues}",
+    "all_organs_not_exist": "All specified organ types do not exist: {organs}",
+    "unknown_error": "Unknown error"
+  },
+  "client": {
+    "fastmcp": {
+      "starting": "🚀 Starting FastMCP server...",
+      "started": "✅ FastMCP server started",
+      "process_exited": "❌ Server process exited unexpectedly, exit code: {code}",
+      "error_output": "   Error output: {output}",
+      "start_failed": "❌ Failed to start FastMCP server: {error}",
+      "init_failed": "❌ MCP initialization failed: {response}",
+      "json_parse_failed": "❌ MCP JSON parsing failed: {error}",
+      "request_timeout": "⏰ MCP request timeout",
+      "request_failed": "❌ MCP request failed: {error}",
+      "notification_failed": "❌ Failed to send notification: {error}",
+      "tool_call_failed": "❌ MCP tool call failed: {error}",
+      "tool_no_response": "❌ MCP tool call no response",
+      "stopping": "🛑 Stopping FastMCP server...",
+      "stopped": "✅ FastMCP server stopped"
+    }
+  },
+  "agent": {
+    "language_set": "🌐 Language set to: {language}",
+    "language_not_supported": "⚠️ Unsupported language: {language}, supported languages: {supported}",
+    "template_fallback": "⚠️ Main template failed: {error}, using fallback version",
+    "init_failed": "❌ Agent initialization failed",
+    "analysis_start": "🔬 Starting cell type analysis..."
+  },
+  "api": {
+    "health_check": "🔍 Testing health check endpoint...",
+    "service_status": "✅ Service status: {status}, version: {version}",
+    "health_check_failed": "❌ Health check failed: {error}",
+    "analyzing_genes": "🧬 Starting analysis of gene list: {genes}",
+    "tissue_type": "🏥 Tissue type: {tissue}",
+    "analyzing_wait": "⏳ Analyzing, please wait (max {timeout} seconds)...",
+    "analyzing_wait_no_timeout": "⏳ Analyzing, please wait (no timeout limit)...",
+    "analysis_success": "✅ Analysis successful!",
+    "inferred_celltype": "📊 Inferred cell type: {celltype}",
+    "total_iterations": "🔄 Total iterations: {count}",
+    "analysis_log_entries": "📝 Analysis log entries: {count}",
+    "log_file": "📄 Detailed log file: {path}",
+    "final_llm_output": "🤖 Final LLM output: {output}...",
+    "analysis_failed": "❌ Analysis failed: {error}",
+    "request_timeout": "⏰ Request timeout, analysis may still be running, check log file",
+    "request_failed": "❌ Analysis request failed: {error}",
+    "usage_example": "🧬 Cell Type Analysis API Usage Example",
+    "service_unavailable": "❌ Service unavailable, please check if API service is running",
+    "analysis_complete": "🎉 Analysis completed!",
+    "received_request": "Received analysis request: gene list={genes}...",
+    "request_completed": "Analysis completed: success={success}, cell type={celltype}",
+    "api_error": "API call error occurred: {error}"
+  },
+  "logger": {
+    "llm": {
+      "log_saved_to": "📝 LLM logs will be saved to: {path}",
+      "request_logged": "📋 Logged {type} request log",
+      "log_failed": "❌ Failed to log: {error}",
+      "summary_failed": "❌ Failed to get log summary: {error}"
+    },
+    "api": {
+      "input_genes": "📋 Input gene list: {genes}",
+      "tissue_type": "🏥 Tissue type: {tissue}",
+      "using_model": "🤖 Using model: {model}",
+      "log_file": "📄 Log file location: {path}",
+      "analysis_start": "🚀 Starting cell type analysis...",
+      "total_iterations": "   - Total iterations: {count}",
+      "tool_calls": "   - Tool call count: {count}",
+      "analysis_success": "   - Analysis success: {success}",
+      "log_saved": "📄 Complete analysis log saved to: {path}",
+      "error_log_saved": "📄 Error log saved to: {path}",
+      "init_success": "React Agent initialized successfully, using model: {model}",
+      "init_failed": "React Agent initialization failed",
+      "init_error": "Error initializing agent: {error}",
+      "analysis_error": "Error during analysis: {error}",
+      "cleanup_error": "Error cleaning up resources: {error}"
+    }
+  },
+  "ncbi": {
+    "adapter_init": "NCBI API adapter initialized (preferred API: {api})",
+    "datasets_v2": "Datasets v2",
+    "e_utilities": "E-utilities",
+    "symbol_conversion": "Converting {count} gene symbols to IDs using local database (species: {species})",
+    "conversion_success": "Local conversion successful: {success}/{total} symbols",
+    "conversion_failed": "Gene symbol conversion failed: {error}",
+    "batch_processing": "Processing batch {batch}: {count} genes",
+    "total_retrieved": "Retrieved detailed information for {count} genes",
+    "datasets_failed_switch": "Datasets API failed, switching to E-utilities API",
+    "eutilities_failed_switch": "E-utilities API failed, switching to Datasets API",
+    "trying_datasets": "Trying Datasets API: {count} genes",
+    "datasets_success": "Datasets API successful: {success}/{total} genes",
+    "datasets_call_failed": "Datasets API call failed: {error}",
+    "trying_eutilities": "Trying E-utilities API: {count} genes",
+    "eutilities_success": "E-utilities API successful: {success}/{total} genes",
+    "eutilities_call_failed": "E-utilities API call failed: {error}",
+    "http_error": "HTTP {code} (attempt {attempt}/{max_retries})",
+    "request_error": "Request error (attempt {attempt}/{max_retries}): {error}",
+    "datasets_parse_failed": "Failed to parse Datasets API response: {error}",
+    "eutilities_parse_failed": "Failed to parse E-utilities API response: {error}"
+  },
+  "gene_manager": {
+    "init_complete": "Gene information manager initialization completed",
+    "processing_species": "Starting to process {species} gene information file...",
+    "file_exists": "{species} gene information file already exists ({size:.1f} MB), skipping download",
+    "download_success": "{species} gene information file download successful ({size:.1f} MB)",
+    "download_failed": "{species} gene information file download failed",
+    "loading_parsed": "Loading parsed {species} gene mapping...",
+    "mapping_loaded": "{species} gene mapping loaded: {count} genes",
+    "mapping_load_failed": "Failed to load {species} gene mapping: {error}, will reparse",
+    "file_not_exist": "{species} gene information file does not exist: {path}",
+    "parsing_start": "Starting to parse {species} gene information file...",
+    "file_columns": "File columns: {header}",
+    "processed_lines": "Processed {count} lines",
+    "parsing_complete": "Parsing completed: processed {count} lines",
+    "main_symbols": "Main symbols: {count}",
+    "alias_mappings": "Alias mappings: {count}",
+    "gene_info": "Gene information: {count}",
+    "mapping_built": "{species} gene mapping built and saved to {path}",
+    "parsing_failed": "Failed to parse {species} gene information file: {error}",
+    "data_not_loaded": "{species} gene mapping data not loaded, starting on-demand loading...",
+    "file_not_exist_downloading": "{species} gene information file does not exist, downloading...",
+    "data_load_failed": "Failed to load {species} gene mapping data",
+    "conversion_result": "{species} gene conversion result: {success}/{total} ({rate:.1f}%)",
+    "not_found_symbols": "Symbols not found: {symbols}",
+    "additional_not_found": "... and {count} more"
+  },
+  "fetcher": {
+    "panglaodb": {
+      "no_cache_downloading": "PanglaoDB data cache not found, starting download...",
+      "cache_exists": "PanglaoDB data already exists: {path}",
+      "loading_data": "Loading PanglaoDB data: {path}",
+      "original_columns": "PanglaoDB original columns: {columns}",
+      "mapped_columns": "After column mapping: {columns}",
+      "data_cleaned": "PanglaoDB data cleaning completed: {count} records",
+      "sample_data": "Sample data:\n{data}",
+      "species_distribution": "Species distribution: {distribution}",
+      "processing_error": "PanglaoDB data processing error: {error}",
+      "converting_format": "Converting data to nested format...",
+      "conversion_complete": "Nested format conversion completed:",
+      "species_count": "  Species count: {count}",
+      "celltype_count": "  Cell type count: {count}",
+      "gene_records": "  Gene records: {count}",
+      "format_convert_error": "Data format conversion error: {error}",
+      "data_saved": "Data saved to {path} ({size:.2f} MB)",
+      "processing_start": "=== Starting PanglaoDB data processing workflow ===",
+      "processing_complete": "=== PanglaoDB data processing completed ===",
+      "nested_json_saved": "Nested JSON data saved to: {path}",
+      "processing_failed": "PanglaoDB data processing failed: {error}"
+    },
+    "cellmarker": {
+      "cache_exists": "CellMarker data already exists: {path}",
+      "cache_exists_2": "CellMarker2 data already exists: {path}",
+      "parsing_data": "Parsing CellMarker data: {path}",
+      "original_records": "CellMarker original data: {count} records",
+      "parse_error": "Error processing CellMarker row {idx}: {error}",
+      "parse_complete": "CellMarker parsing completed",
+      "parsing_data_2": "Parsing CellMarker2 data: {path}",
+      "original_records_2": "CellMarker2 original data: {count} records",
+      "parse_error_2": "Error processing CellMarker2 row {idx}: {error}",
+      "parse_complete_2": "CellMarker2 parsing completed",
+      "merging_data": "Merging CellMarker data...",
+      "merge_complete": "CellMarker merging completed",
+      "data_saved": "Data saved to {path} ({size:.2f} MB)"
+    }
+  }
+}

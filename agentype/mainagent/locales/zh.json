@@ -1,0 +1,156 @@
+{
+  "system": {
+    "startup": "🚀 启动 MainAgent 系统",
+    "shutdown": "🛑 关闭 MainAgent 系统",
+    "initialized": "✅ 系统初始化完成",
+    "initialization_failed": "❌ 系统初始化失败: {error}",
+    "config_loaded": "📋 配置加载完成",
+    "config_validation_failed": "⚠️ 配置验证失败，使用默认配置"
+  },
+  "agent": {
+    "connecting": "🔗 正在连接 {agent_name}...",
+    "connected": "✅ {agent_name} 连接成功",
+    "connection_failed": "❌ {agent_name} 连接失败: {error}",
+    "disconnected": "⚠️ {agent_name} 已断开连接",
+    "health_check": "🔍 检查 {agent_name} 健康状态",
+    "healthy": "💚 {agent_name} 状态良好",
+    "unhealthy": "💔 {agent_name} 状态异常"
+  },
+  "workflow": {
+    "started": "🚀 开始执行工作流: {workflow_name}",
+    "step_started": "▶️ 执行步骤 {step_number}: {step_description}",
+    "step_completed": "✅ 步骤 {step_number} 完成 ({execution_time}秒)",
+    "step_failed": "❌ 步骤 {step_number} 失败: {error_message}",
+    "completed": "🎉 工作流执行完成",
+    "failed": "💥 工作流执行失败: {error}",
+    "cancelled": "⏹️ 工作流已取消",
+    "analyzing_task": "🔍 分析任务需求...",
+    "task_analysis_complete": "✅ 任务分析完成: {task_type} (复杂度: {complexity})",
+    "generating_plan": "📋 生成执行计划...",
+    "plan_generated": "✅ 执行计划已生成，预计耗时: {estimated_time}",
+    "no_suitable_workflow": "⚠️ 未找到合适的工作流，使用默认流程"
+  },
+  "pipeline": {
+    "executing": "🔄 执行流水线: {pipeline_name}",
+    "data_processing": "📊 数据处理中...",
+    "gene_analysis": "🧬 基因分析中...",
+    "cell_annotation": "🔍 细胞类型注释中...",
+    "results_summary": "📈 生成结果摘要...",
+    "pipeline_complete": "✅ 流水线执行完成，成功率 {success_rate}%"
+  },
+  "cache": {
+    "saving": "💾 保存到缓存: {cache_key}",
+    "loading": "📂 从缓存加载: {cache_key}",
+    "cache_hit": "✅ 缓存命中: {cache_key}",
+    "cache_miss": "⚠️ 缓存未命中: {cache_key}",
+    "cache_cleared": "🧹 缓存已清理",
+    "cache_size": "📊 缓存大小: {size_mb}MB"
+  },
+  "error": {
+    "config_error": "⚙️ 配置错误: {error}",
+    "connection_error": "🔌 连接错误: {error}",
+    "execution_error": "⚡ 执行错误: {error}",
+    "validation_error": "✅ 验证错误: {error}",
+    "timeout_error": "⏰ 超时错误: {error}",
+    "unknown_error": "❓ 未知错误: {error}",
+    "retry_exhausted": "🔁 重试次数已用完",
+    "critical_failure": "🚨 关键故障: {error}"
+  },
+  "validation": {
+    "file_not_found": "📁 文件不存在: {file_path}",
+    "invalid_format": "📄 文件格式无效: {file_path}",
+    "empty_file": "📭 文件为空: {file_path}",
+    "parameter_missing": "📝 缺少必需参数: {parameter}",
+    "parameter_invalid": "📝 参数值无效: {parameter} = {value}",
+    "validation_passed": "✅ 验证通过",
+    "validation_failed": "❌ 验证失败: {reason}"
+  },
+  "tools": {
+    "tool_called": "🔧 调用工具: {tool_name}",
+    "tool_success": "✅ 工具调用成功: {tool_name}",
+    "tool_failed": "❌ 工具调用失败: {tool_name} - {error}",
+    "tool_not_found": "🔍 工具不存在: {tool_name}",
+    "listing_tools": "📋 列出可用工具",
+    "tool_count": "🔧 找到 {count} 个可用工具"
+  },
+  "status": {
+    "ready": "🟢 就绪",
+    "busy": "🟡 忙碌",
+    "error": "🔴 错误",
+    "offline": "⚫ 离线",
+    "connecting": "🟠 连接中",
+    "initializing": "🔵 初始化中"
+  },
+  "messages": {
+    "welcome": "🔬 欢迎使用 MainAgent 细胞类型注释系统！",
+    "help": "ℹ️ 输入任务描述，系统将自动分析并执行相应的工作流程",
+    "task_received": "📋 收到任务: {task_description}",
+    "processing": "⚙️ 处理中，请稍候...",
+    "completed": "🎉 任务完成！",
+    "failed": "😞 任务失败，请查看错误详情",
+    "goodbye": "👋 感谢使用 MainAgent 系统！"
+  },
+  "recommendations": {
+    "check_data_format": "建议检查输入数据格式",
+    "verify_file_paths": "建议验证文件路径是否正确",
+    "check_connectivity": "建议检查子Agent连接状态",
+    "optimize_resources": "建议优化计算资源配置",
+    "retry_operation": "建议重试操作",
+    "contact_support": "如问题持续，请联系技术支持"
+  },
+  "statistics": {
+    "total_workflows": "总工作流数: {count}",
+    "successful_executions": "成功执行数: {count}",
+    "failed_executions": "失败执行数: {count}",
+    "average_execution_time": "平均执行时间: {time}秒",
+    "cache_hit_rate": "缓存命中率: {rate}%",
+    "uptime": "运行时间: {uptime}"
+  },
+  "orchestrator": {
+    "log_info": "📝 信息: {message}",
+    "log_warning": "⚠️ 警告: {message}",
+    "log_error": "❌ 错误: {message}",
+    "log_debug": "🐛 调试: {message}",
+    "session_started": "📊 编排器会话开始",
+    "session_ended": "📊 编排器会话结束",
+    "performance_summary": "📈 性能摘要: 执行 {total_tasks} 个任务，成功率 {success_rate}%",
+    "log_export_success": "💾 日志导出成功: {file_path}",
+    "log_export_failed": "💾 日志导出失败: {error}"
+  },
+  "openai": {
+    "request": "开始调用 OpenAI 接口",
+    "model": "使用模型: {model}",
+    "message_count": "消息数量: {count}",
+    "timeout": "超时时间: {timeout} 秒",
+    "streaming_enabled": "已启用流式输出",
+    "streaming_disabled": "未启用流式输出",
+    "streaming": "流式设置: {enabled}",
+    "streaming_not_supported": "模型不支持流式输出，自动降级",
+    "streaming_start": "开始接收流式响应…",
+    "streaming_completed": "流式响应结束，累计字符: {chars}",
+    "fallback_to_non_stream": "降级为非流式请求…",
+    "retry_non_stream": "重试非流式请求…",
+    "non_stream_completed": "非流式响应完成，长度: {length}",
+    "response": "收到响应",
+    "response_length": "响应长度: {length}"
+  },
+  "context": {
+    "too_long": "上下文过长，进行摘要以减少Token消耗",
+    "nothing_to_summarize": "无可摘要的历史消息，跳过",
+    "summary_logged": "已记录上下文摘要请求日志",
+    "summary_completed": "上下文摘要完成",
+    "original_count": "原始消息数: {count}",
+    "summarized_count": "摘要后消息数: {count}",
+    "summary_length": "摘要字符数: {length}",
+    "summary_failed": "上下文摘要失败: {error}",
+    "fallback_strategy": "摘要失败，保留最近消息作为回退"
+  },
+  "retry": {
+    "llm_retry": "正在重试 LLM 调用，第 {retry}/{max_retries} 次",
+    "last_response_issues": "上次响应格式问题: {issues}",
+    "retry_logged": "已记录第 {count} 次重试日志",
+    "retry_success": "重试成功，格式验证通过",
+    "retry_failed": "重试失败（第 {count} 次），问题: {issues}",
+    "max_retries_reached": "已达到最大重试次数"
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "system": {
+    "startup": "🚀 Starting MainAgent System",
+    "shutdown": "🛑 Shutting Down MainAgent System",
+    "initialized": "✅ System Initialized Successfully",
+    "initialization_failed": "❌ System Initialization Failed: {error}",
+    "config_loaded": "📋 Configuration Loaded",
+    "config_validation_failed": "⚠️ Configuration Validation Failed, Using Defaults"
+  },
+  "agent": {
+    "connecting": "🔗 Connecting to {agent_name}...",
+    "connected": "✅ {agent_name} Connected Successfully",
+    "connection_failed": "❌ {agent_name} Connection Failed: {error}",
+    "disconnected": "⚠️ {agent_name} Disconnected",
+    "health_check": "🔍 Checking {agent_name} Health Status",
+    "healthy": "💚 {agent_name} is Healthy",
+    "unhealthy": "💔 {agent_name} is Unhealthy"
+  },
+  "workflow": {
+    "started": "🚀 Started Workflow: {workflow_name}",
+    "step_started": "▶️ Executing Step {step_number}: {step_description}",
+    "step_completed": "✅ Step {step_number} Completed ({execution_time}s)",
+    "step_failed": "❌ Step {step_number} Failed: {error_message}",
+    "completed": "🎉 Workflow Execution Completed",
+    "failed": "💥 Workflow Execution Failed: {error}",
+    "cancelled": "⏹️ Workflow Cancelled",
+    "analyzing_task": "🔍 Analyzing Task Requirements...",
+    "task_analysis_complete": "✅ Task Analysis Complete: {task_type} (Complexity: {complexity})",
+    "generating_plan": "📋 Generating Execution Plan...",
+    "plan_generated": "✅ Execution Plan Generated, Estimated Time: {estimated_time}",
+    "no_suitable_workflow": "⚠️ No Suitable Workflow Found, Using Default Process"
+  },
+  "pipeline": {
+    "executing": "🔄 Executing Pipeline: {pipeline_name}",
+    "data_processing": "📊 Processing Data...",
+    "gene_analysis": "🧬 Analyzing Genes...",
+    "cell_annotation": "🔍 Annotating Cell Types...",
+    "results_summary": "📈 Generating Results Summary...",
+    "pipeline_complete": "✅ Pipeline Execution Complete, Success Rate {success_rate}%"
+  },
+  "cache": {
+    "saving": "💾 Saving to Cache: {cache_key}",
+    "loading": "📂 Loading from Cache: {cache_key}",
+    "cache_hit": "✅ Cache Hit: {cache_key}",
+    "cache_miss": "⚠️ Cache Miss: {cache_key}",
+    "cache_cleared": "🧹 Cache Cleared",
+    "cache_size": "📊 Cache Size: {size_mb}MB"
+  },
+  "error": {
+    "config_error": "⚙️ Configuration Error: {error}",
+    "connection_error": "🔌 Connection Error: {error}",
+    "execution_error": "⚡ Execution Error: {error}",
+    "validation_error": "✅ Validation Error: {error}",
+    "timeout_error": "⏰ Timeout Error: {error}",
+    "unknown_error": "❓ Unknown Error: {error}",
+    "retry_exhausted": "🔁 Retry Attempts Exhausted",
+    "critical_failure": "🚨 Critical Failure: {error}"
+  },
+  "validation": {
+    "file_not_found": "📁 File Not Found: {file_path}",
+    "invalid_format": "📄 Invalid File Format: {file_path}",
+    "empty_file": "📭 Empty File: {file_path}",
+    "parameter_missing": "📝 Missing Required Parameter: {parameter}",
+    "parameter_invalid": "📝 Invalid Parameter Value: {parameter} = {value}",
+    "validation_passed": "✅ Validation Passed",
+    "validation_failed": "❌ Validation Failed: {reason}"
+  },
+  "tools": {
+    "tool_called": "🔧 Calling Tool: {tool_name}",
+    "tool_success": "✅ Tool Call Successful: {tool_name}",
+    "tool_failed": "❌ Tool Call Failed: {tool_name} - {error}",
+    "tool_not_found": "🔍 Tool Not Found: {tool_name}",
+    "listing_tools": "📋 Listing Available Tools",
+    "tool_count": "🔧 Found {count} Available Tools"
+  },
+  "status": {
+    "ready": "🟢 Ready",
+    "busy": "🟡 Busy",
+    "error": "🔴 Error",
+    "offline": "⚫ Offline",
+    "connecting": "🟠 Connecting",
+    "initializing": "🔵 Initializing"
+  },
+  "messages": {
+    "welcome": "🔬 Welcome to MainAgent Cell Type Annotation System!",
+    "help": "ℹ️ Enter your task description, and the system will automatically analyze and execute the appropriate workflow",
+    "task_received": "📋 Task Received: {task_description}",
+    "processing": "⚙️ Processing, please wait...",
+    "completed": "🎉 Task Completed!",
+    "failed": "😞 Task Failed, please check error details",
+    "goodbye": "👋 Thank you for using MainAgent System!"
+  },
+  "recommendations": {
+    "check_data_format": "Recommend checking input data format",
+    "verify_file_paths": "Recommend verifying file paths are correct",
+    "check_connectivity": "Recommend checking sub-agent connectivity",
+    "optimize_resources": "Recommend optimizing computational resources",
+    "retry_operation": "Recommend retrying the operation",
+    "contact_support": "If issues persist, please contact technical support"
+  },
+  "statistics": {
+    "total_workflows": "Total Workflows: {count}",
+    "successful_executions": "Successful Executions: {count}",
+    "failed_executions": "Failed Executions: {count}",
+    "average_execution_time": "Average Execution Time: {time}s",
+    "cache_hit_rate": "Cache Hit Rate: {rate}%",
+    "uptime": "Uptime: {uptime}"
+  },
+  "orchestrator": {
+    "log_info": "📝 Info: {message}",
+    "log_warning": "⚠️ Warning: {message}",
+    "log_error": "❌ Error: {message}",
+    "log_debug": "🐛 Debug: {message}",
+    "session_started": "📊 Orchestrator Session Started",
+    "session_ended": "📊 Orchestrator Session Ended",
+    "performance_summary": "📈 Performance Summary: Executed {total_tasks} tasks, Success Rate {success_rate}%",
+    "log_export_success": "💾 Log Export Successful: {file_path}",
+    "log_export_failed": "💾 Log Export Failed: {error}"
+  },
+  "openai": {
+    "request": "Calling OpenAI API",
+    "model": "Using model: {model}",
+    "message_count": "Message count: {count}",
+    "timeout": "Timeout: {timeout} seconds",
+    "streaming_enabled": "Streaming enabled",
+    "streaming_disabled": "Streaming disabled",
+    "streaming": "Streaming: {enabled}",
+    "streaming_not_supported": "Model does not support streaming, falling back",
+    "streaming_start": "Starting to receive streaming response…",
+    "streaming_completed": "Streaming completed, total chars: {chars}",
+    "fallback_to_non_stream": "Falling back to non-streaming request…",
+    "retry_non_stream": "Retrying non-streaming request…",
+    "non_stream_completed": "Non-stream response completed, length: {length}",
+    "response": "Response received",
+    "response_length": "Response length: {length}"
+  },
+  "context": {
+    "too_long": "Context too long, summarizing to reduce tokens",
+    "nothing_to_summarize": "Nothing to summarize, skip",
+    "summary_logged": "Context summarization request logged",
+    "summary_completed": "Context summarization completed",
+    "original_count": "Original message count: {count}",
+    "summarized_count": "Summarized message count: {count}",
+    "summary_length": "Summary length: {length}",
+    "summary_failed": "Context summarization failed: {error}",
+    "fallback_strategy": "Summarization failed, keeping recent messages as fallback"
+  },
+  "retry": {
+    "llm_retry": "Retrying LLM call, attempt {retry}/{max_retries}",
+    "last_response_issues": "Last response format issues: {issues}",
+    "retry_logged": "Logged retry attempt {count}",
+    "retry_success": "Retry succeeded, format validated",
+    "retry_failed": "Retry failed (attempt {count}), issues: {issues}",
+    "max_retries_reached": "Maximum retry attempts reached"
+  }
+}

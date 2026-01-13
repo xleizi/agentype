@@ -1,0 +1,276 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentype"
+version = "1.0.1"
+authors = [
+    { name = "CellType Agent Team", email = "contact@agentype.com" },
+]
+description = "统一的细胞类型分析工具包，集成四个专业Agent提供完整的细胞类型注释流程"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Natural Language :: Chinese (Simplified)",
+    "Natural Language :: English",
+]
+keywords = [
+    "single-cell",
+    "RNA-seq",
+    "cell-type",
+    "annotation",
+    "SingleR",
+    "scType",
+    "CellTypist",
+    "bioinformatics",
+    "genomics",
+    "MCP"
+]
+
+# 核心依赖
+dependencies = [
+    # MCP框架
+    "mcp>=1.0.0",
+    "fastmcp>=0.3.0",
+
+    # Web API框架
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "pydantic>=2.5.0",
+
+    # 异步支持
+    "asyncio-mqtt>=0.16.0",
+    "aiofiles>=23.2.1",
+    "websockets>=12.0",
+
+    # 科学计算和数据处理
+    "numpy>=1.24.0,<2.0",
+    "pandas>=2.1.0,<2.2.0",
+    "scipy>=1.11.0",
+
+    # 单细胞数据分析核心库
+    "scanpy>=1.9.0",
+    "anndata>=0.10.0",
+
+    # 基因富集分析
+    "gseapy>=1.1.0",
+
+    # 数据格式支持
+    "h5py>=3.10.0",
+    "tables>=3.9.0",
+    "openpyxl>=3.1.0",
+
+    # 网络请求
+    "requests>=2.31.0",
+    "httpx>=0.25.0",
+
+    # 配置和序列化
+    "pyyaml>=6.0",
+    "jsonschema>=4.20.0",
+
+    # 日志和工具
+    "loguru>=0.7.0",
+    "click>=8.1.0",
+    "rich>=13.7.0",
+    "tqdm>=4.66.0",
+
+    # 文件操作
+    "pathlib2>=2.3.7",
+    "filetype>=1.2.0",
+
+    # 类型检查
+    "typing-extensions>=4.8.0",
+    "pydantic-settings>=2.1.0",
+
+    # 国际化
+    "babel>=2.13.0",
+    "python-i18n>=0.3.9",
+
+    # 系统监控
+    "psutil>=5.9.0",
+
+    # 时间处理
+    "python-dateutil>=2.8.0",
+    "pytz>=2023.3",
+]
+
+[project.optional-dependencies]
+# 细胞类型注释工具
+annotation = [
+    "celltypist>=1.6.0",
+    "rpy2>=3.5.0",  # SingleR和scType的R接口
+    "bioservices>=1.11.0",  # NCBI API
+    "biopython>=1.81",
+]
+
+# 机器学习增强
+ml = [
+    "scikit-learn>=1.3.0",
+    "torch>=2.0.0",
+    "numba>=0.58.0",
+]
+
+# 可视化支持
+viz = [
+    "matplotlib>=3.8.0",
+    "seaborn>=0.12.0",
+    "plotly>=5.17.0",
+]
+
+# 性能优化
+performance = [
+    "dask[complete]>=2023.12.0",
+    "joblib>=1.3.0",
+    "diskcache>=5.6.0",
+]
+
+# 部署相关
+deploy = [
+    "gunicorn>=21.2.0",
+    "docker>=6.1.0",
+]
+
+# 开发依赖
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.11.0",
+    "flake8>=6.1.0",
+    "mypy>=1.7.0",
+    "ruff>=0.1.0",
+]
+
+# 全部可选功能
+all = [
+    "agentype[annotation,ml,viz,performance,deploy]"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/agentype/celltype-agent"
+"Bug Tracker" = "https://github.com/agentype/celltype-agent/issues"
+"Documentation" = "https://github.com/agentype/celltype-agent/wiki"
+"Source" = "https://github.com/agentype/celltype-agent"
+"Changelog" = "https://github.com/agentype/celltype-agent/blob/main/CHANGELOG.md"
+
+[project.scripts]
+# 主要管理工具
+celltype-manage = "manage:main"
+# MCP服务器启动器
+celltype-server = "agentype.servers:start_all_servers"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agentype*"]
+exclude = [
+    "tests*",
+    "outputs*",
+    "logs*",
+    ".claude*",
+    "*.egg-info*"
+]
+
+[tool.setuptools.package-data]
+"*" = [
+    "*.json",
+    "*.yaml",
+    "*.yml",
+    "*.R",
+    "*.r",
+    "*.md",
+    "locales/**/*.json",
+    "templates/**/*",
+    "data/**/*",
+    "prompts/**/*.py",
+]
+
+# 代码质量工具配置
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | outputs
+)/
+'''
+
+[tool.ruff]
+line-length = 88
+target-version = "py38"
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+]
+ignore = [
+    "E501",  # line too long, handled by black
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[[tool.mypy.overrides]]
+module = [
+    "scanpy.*",
+    "anndata.*",
+    "celltypist.*",
+    "rpy2.*",
+    "gseapy.*",
+    "bioservices.*",
+]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --strict-markers --strict-config"
+testpaths = [
+    "tests",
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "unit: marks tests as unit tests",
+]

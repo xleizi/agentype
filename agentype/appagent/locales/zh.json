@@ -1,0 +1,280 @@
+{
+  "mcp": {
+    "server": {
+      "starting": "🚀 启动 CellType App Agent MCP Server...",
+      "protocol": "📡 MCP协议: stdio",
+      "tool_count": "🔧 工具数量: 13个",
+      "functions": "🧬 细胞类型注释工具清单:",
+      "tool_list": {
+        "get_celldx_projects_info_tool": "   1️⃣  get_celldx_projects_info_tool - 获取celldx数据集信息",
+        "download_celldx_dataset_tool": "   2️⃣  download_celldx_dataset_tool - 下载celldx数据集",
+        "singleR_annotate_tool": "   3️⃣  singleR_annotate_tool - SingleR细胞类型注释",
+        "get_sctype_tissues_tool": "   4️⃣  get_sctype_tissues_tool - 获取scType组织类型",
+        "sctype_annotate_tool": "   5️⃣  sctype_annotate_tool - scType细胞类型注释",
+        "get_celltypist_models_tool": "   6️⃣  get_celltypist_models_tool - 获取CellTypist模型",
+        "celltypist_annotate_tool": "   7️⃣  celltypist_annotate_tool - CellTypist细胞类型注释",
+        "celltype_annotation_pipeline": "   8️⃣  celltype_annotation_pipeline - 统一注释流水线",
+        "get_all_output_file_paths": "   9️⃣  get_all_output_file_paths - 获取标准化文件路径",
+        "detect_species_from_h5ad_tool": "   🔟  detect_species_from_h5ad_tool - 从H5AD文件检测物种",
+        "detect_species_from_rds_tool": "   1️⃣1️⃣ detect_species_from_rds_tool - 从RDS文件检测物种",
+        "detect_species_from_marker_json_tool": "   1️⃣2️⃣ detect_species_from_marker_json_tool - 从JSON文件检测物种",
+        "validate_marker_json_tool": "   1️⃣3️⃣ validate_marker_json_tool - 验证marker基因JSON文件"
+      },
+      "separator": "════════════════════════════════════════════════════════════"
+    },
+    "import": {
+      "failed": "导入依赖失败: {error}",
+      "install_deps": "请检查MCP包安装：pip install mcp",
+      "current_dir": "当前工作目录: {path}",
+      "project_root": "项目根目录: {path}",
+      "python_path": "Python路径: {paths}"
+    }
+  },
+  "annotation": {
+    "phase": {
+      "phase1": "第一阶段：输入验证和预处理",
+      "phase2": "第二阶段：SingleR注释流程", 
+      "phase3": "第三阶段：scType注释流程",
+      "phase4": "第四阶段：CellTypist注释流程",
+      "phase5": "第五阶段：结果整合"
+    },
+    "step": {
+      "1": "输入文件验证",
+      "2": "物种检测",
+      "3": "获取celldx数据集信息",
+      "4": "智能数据集选择",
+      "5": "下载参考数据集",
+      "6": "执行SingleR注释",
+      "7": "获取scType组织类型",
+      "8": "组织类型匹配",
+      "9": "执行scType注释",
+      "10": "获取CellTypist模型",
+      "11": "智能模型选择",
+      "12": "执行CellTypist注释",
+      "13": "结果整合"
+    },
+    "method": {
+      "singler": {
+        "name": "SingleR",
+        "description": "基于参考数据集的细胞类型注释",
+        "starting": "开始SingleR注释...",
+        "completed": "SingleR注释完成",
+        "failed": "SingleR注释失败"
+      },
+      "sctype": {
+        "name": "scType",
+        "description": "基于组织特异性标记基因的细胞类型注释",
+        "starting": "开始scType注释...",
+        "completed": "scType注释完成",
+        "failed": "scType注释失败"
+      },
+      "celltypist": {
+        "name": "CellTypist",
+        "description": "基于机器学习模型的细胞类型注释",
+        "starting": "开始CellTypist注释...",
+        "completed": "CellTypist注释完成",
+        "failed": "CellTypist注释失败"
+      }
+    },
+    "pipeline": {
+      "starting": "🚀 开始完整的细胞类型注释流水线",
+      "completed": "🎉 完整注释流水线完成",
+      "summary": "📊 注释流水线执行总结",
+      "success_rate": "成功率: {rate}",
+      "all_success": "所有方法执行成功！",
+      "partial_success": "大部分方法执行成功",
+      "mostly_failed": "多数方法执行失败"
+    }
+  },
+  "species": {
+    "detection": {
+      "from_h5ad": "从H5AD文件检测物种",
+      "from_rds": "从RDS文件检测物种", 
+      "from_json": "从marker基因JSON文件检测物种",
+      "detected": "检测到物种: {species}",
+      "confidence": "置信度: {confidence}",
+      "default_fallback": "无法检测物种，使用默认值: {species}",
+      "human": "人类",
+      "mouse": "小鼠"
+    }
+  },
+  "file": {
+    "validation": {
+      "rds_valid": "RDS文件验证通过",
+      "h5ad_valid": "H5AD文件验证通过",
+      "json_valid": "JSON文件验证通过",
+      "file_not_found": "文件不存在: {path}",
+      "invalid_format": "文件格式无效: {path}",
+      "path_standardized": "文件路径已标准化"
+    },
+    "processing": {
+      "reading": "正在读取文件: {path}",
+      "writing": "正在写入文件: {path}",
+      "completed": "文件处理完成: {path}"
+    }
+  },
+  "dataset": {
+    "celldx": {
+      "downloading": "正在下载celldx数据集: {name}",
+      "download_completed": "数据集下载完成: {name}",
+      "download_failed": "数据集下载失败: {name}",
+      "info_retrieved": "成功获取celldx数据集信息",
+      "selection": "智能选择数据集: {name}"
+    },
+    "sctype": {
+      "tissues_retrieved": "成功获取scType组织类型",
+      "tissue_matched": "组织类型匹配: {tissue}",
+      "tissue_selection": "智能选择组织类型: {tissue}"
+    },
+    "celltypist": {
+      "models_retrieved": "成功获取CellTypist模型列表",
+      "model_selected": "智能选择模型: {model}",
+      "auto_detection": "启用自动物种检测"
+    }
+  },
+  "results": {
+    "integration": {
+      "starting": "开始结果整合...",
+      "comparing": "比较三种方法的注释结果",
+      "consensus": "一致性分析完成",
+      "recommendation": "生成最终推荐",
+      "completed": "结果整合完成"
+    },
+    "summary": {
+      "total_clusters": "总簇数: {count}",
+      "consensus_clusters": "一致性簇数: {count}",
+      "consensus_rate": "一致性比率: {rate}",
+      "high_confidence": "高置信度簇: {count}",
+      "methods_used": "使用的方法: {methods}"
+    }
+  },
+  "validation": {
+    "missing_thought_tag": "缺少 <thought> 标签",
+    "missing_action_or_final_answer": "缺少 <action> 或 <final_answer> 标签",
+    "unclosed_thought_tag": "未关闭的 <thought> 标签",
+    "unclosed_action_tag": "未关闭的 <action> 标签",
+    "unclosed_final_answer_tag": "未关闭的 <final_answer> 标签",
+    "unexpected_observation_tag": "不应该包含 <observation> 标签",
+    "json_decode_error": "JSON解析错误: {error}",
+    "empty_file_path": "文件路径为空",
+    "file_not_exist": "文件不存在: {path}",
+    "path_is_directory": "路径是目录而非文件: {path}",
+    "invalid_path_format": "无效的路径格式: {error}",
+    "invalid_file_extension": "无效的文件扩展名: {extension}，期望: {expected}",
+    "no_input_files_provided": "未提供任何输入文件",
+    "invalid_annotation_method": "无效的注释方法: {method}，有效选项: {valid}",
+    "empty_species": "物种信息为空",
+    "unsupported_species": "不支持的物种: {species}，支持的物种: {supported}",
+    "tissue_type_optional": "组织类型是可选的",
+    "invalid_pval_threshold": "无效的p值阈值: {threshold}",
+    "output_dir_not_exist": "输出目录不存在: {dir}",
+    "invalid_output_path": "无效的输出路径: {error}",
+    "invalid_cache_dir": "无效的缓存目录: {dir}，错误: {error}",
+    "marker_json_not_dict": "Marker基因JSON文件不是字典格式",
+    "marker_json_no_genes": "Marker基因JSON文件不包含基因信息",
+    "invalid_genes_in_cluster": "簇 {cluster} 中包含无效基因: {genes}"
+  },
+  "annotation_method": {
+    "singler_desc": "SingleR - 基于参考数据集的细胞类型注释",
+    "sctype_desc": "scType - 基于组织特异性标记基因的注释",
+    "celltypist_desc": "CellTypist - 基于机器学习模型的注释",
+    "pipeline_desc": "完整流水线 - 整合三种方法的综合注释",
+    "unknown": "未知的注释方法"
+  },
+  "content": {
+    "length_ok": "内容长度正常: {length} 字符",
+    "length_too_long": "内容过长: {length} 字符",
+    "reducing_annotation_data": "正在减少注释数据量...",
+    "reduction_success": "数据减少成功，新长度: {length} 字符",
+    "reduction_failed": "数据减少失败",
+    "generating_summary": "正在生成AI摘要...",
+    "keeping_integrity": "保持内容完整性",
+    "reduction_error": "数据减少时发生错误: {error}",
+    "annotation_ai_summary_prefix": "📄 AI摘要：\n",
+    "summarization_failed": "AI摘要生成失败: {error}"
+  },
+  "error": {
+    "general": "发生错误: {error}",
+    "file_not_found": "文件未找到: {path}",
+    "invalid_input": "无效输入: {input}",
+    "processing_failed": "处理失败: {reason}",
+    "network_error": "网络错误: {error}",
+    "permission_denied": "权限被拒绝: {path}"
+  },
+  "success": {
+    "completed": "操作完成",
+    "file_created": "文件已创建: {path}",
+    "annotation_completed": "注释完成",
+    "pipeline_success": "流水线执行成功"
+  },
+  "openai": {
+    "request": "正在发起 OpenAI 请求...",
+    "model": "使用模型: {model}",
+    "message_count": "消息数量: {count}",
+    "timeout": "超时: {timeout}s",
+    "streaming": "流式输出: {enabled}",
+    "streaming_enabled": "启用",
+    "streaming_disabled": "禁用",
+    "streaming_start": "开始接收流式输出",
+    "streaming_completed": "流式输出完成（共 {chars} 字符）",
+    "streaming_not_supported": "模型不支持流式输出，自动切换为非流式",
+    "streaming_failed": "流式传输失败: {error}",
+    "fallback_to_non_stream": "回退到非流式模式...",
+    "retry_non_stream": "重新发起非流式请求",
+    "non_stream_completed": "非流式响应完成（长度 {length}）",
+    "response": "已收到模型响应",
+    "response_length": "响应长度: {length}"
+  },
+  "analysis": {
+    "iteration": "第 {iter}/{max} 次迭代",
+    "system_prompt_length": "系统提示长度: {length}",
+    "user_query": "用户查询: {query}",
+    "analysis_completed": "分析完成（final_answer 截断预览）: {celltype}",
+    "final_answer_no_celltype": "final_answer 中未解析到内容",
+    "summary": {
+      "title": "📊 注释流程总结",
+      "total_iterations": "总迭代数: {iterations}",
+      "tool_calls": "工具调用次数: {count}",
+      "context_summary": "上下文已在第 {threshold} 次迭代后进行总结",
+      "llm_stats": "LLM 请求总数: {total}",
+      "success_failure": "成功: {success} 次，失败: {failure} 次",
+      "log_file": "日志文件: {file}",
+      "stats_failed": "统计信息生成失败: {error}"
+    }
+  },
+  "tools": {
+    "call": {
+      "calling": "🔧 调用工具: {name}({params})",
+      "success": "✅ 工具执行成功，返回长度: {length}",
+      "failed": "❌ 工具调用失败",
+      "no_action": "⚠️ 无可执行的工具动作"
+    }
+  },
+  "agent": {
+    "language_set": "已切换语言为: {language}",
+    "language_not_supported": "不支持的语言: {language}，支持: {supported}",
+    "template_fallback": "系统提示模板加载失败，使用简化模板。错误: {error}",
+    "analysis_start": "开始细胞类型注释"
+  },
+  "retry": {
+    "llm_retry": "格式不合规，进行第 {retry}/{max_retries} 次纠正重试...",
+    "last_response_issues": "上次响应问题: {issues}",
+    "retry_logged": "已记录第 {count} 次重试日志",
+    "retry_success": "纠正重试成功，继续流程",
+    "retry_failed": "纠正重试失败（第 {count} 次），问题: {issues}",
+    "max_retries_reached": "已达到最大重试次数"
+  },
+  "context": {
+    "too_long": "上下文过长，准备进行摘要压缩...",
+    "no_history": "没有可摘要的历史，跳过",
+    "summary_logged": "已记录上下文摘要请求",
+    "summary_completed": "上下文摘要完成",
+    "original_messages": "原始消息数量: {count}",
+    "summarized_messages": "摘要后消息数量: {count}",
+    "summary_length": "摘要长度: {length}",
+    "simple_strategy": "摘要失败，采用保留最近消息的简化策略"
+  },
+  "validation": {
+    "response_invalid": "响应格式校验未通过，准备纠正重试"
+  }
+}

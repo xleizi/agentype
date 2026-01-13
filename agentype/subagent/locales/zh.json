@@ -1,0 +1,353 @@
+{
+  "mcp": {
+    "server": {
+      "starting": "🚀 启动 CellType MCP Server...",
+      "protocol": "📡 MCP协议: stdio",
+      "tool_count": "🔧 工具数量: 10个",
+      "functions": "🧬 功能清单:",
+      "tool_list": {
+        "get_gene_info": "   • get_gene_info - 从NCBI获取基因信息",
+        "query_cellmarker": "   • query_cellmarker - 查询CellMarker数据库",
+        "query_panglaodb": "   • query_panglaodb - 查询PanglaoDB数据库",
+        "cellmarker_enrichment": "   • cellmarker_enrichment - CellMarker富集分析",
+        "panglaodb_enrichment": "   • panglaodb_enrichment - PanglaoDB富集分析",
+        "gene_enrichment_analysis": "   • gene_enrichment_analysis - GO和KEGG通路分析",
+        "get_cellmarker_tissues": "   • get_cellmarker_tissues - 获取CellMarker组织类型列表",
+        "get_panglaodb_organs": "   • get_panglaodb_organs - 获取PanglaoDB器官类型列表",
+        "get_cellmarker_celltypes_by_tissue": "   • get_cellmarker_celltypes_by_tissue - 根据组织获取CellMarker细胞类型",
+        "get_panglaodb_celltypes_by_organ": "   • get_panglaodb_celltypes_by_organ - 根据器官获取PanglaoDB细胞类型"
+      },
+      "separator": "────────────────────────────────────────────────────────────"
+    },
+    "import": {
+      "failed": "导入依赖失败: {error}",
+      "install_deps": "请确保安装了所需的依赖包",
+      "current_dir": "当前工作目录: {path}",
+      "project_root": "项目根目录: {path}",
+      "python_path": "Python路径: {paths}"
+    }
+  },
+  "gene": {
+    "detection": {
+      "species": "🔍 自动检测为{species}基因 (大写比例: {ratio:.2f})",
+      "species_human": "人类",
+      "species_mouse": "小鼠",
+      "converting": "🔍 需要转换的基因符号: {genes}",
+      "detected_species": "🧬 自动检测物种: {species}",
+      "converted_success": "✅ {symbol} -> {gene_id}",
+      "converted_failed": "❌ 无法转换基因符号: {symbol}",
+      "conversion_failed": "⚠️ 基因符号转换失败: {error}",
+      "final_ids": "🎯 最终用于查询的基因ID: {ids}"
+    },
+    "info": {
+      "empty_list": "基因ID/符号列表为空",
+      "no_valid_ids": "无有效的基因ID可供查询",
+      "no_results": "未获取到基因信息，请检查网络连接和基因ID/符号",
+      "get_failed": "获取基因信息失败: {error}"
+    }
+  },
+  "tools": {
+    "call": {
+      "calling": "🔧 调用工具: {name}({params})",
+      "success": "✅ 工具调用成功，内容长度: {length} 字符",
+      "failed": "❌ 工具调用失败",
+      "no_action": "❌ 未找到有效的 action，停止分析"
+    }
+  },
+  "download": {
+    "file_exists": "文件已存在 ({size:.2f} MB): {path}",
+    "starting": "正在下载 {url} (尝试 {attempt}/{max_retries})",
+    "progress": "下载进度: {progress:.1f}% ({downloaded:.1f} MB)",
+    "downloaded": "已下载: {downloaded:.1f} MB",
+    "completed": "下载完成: {path} ({size:.2f} MB)",
+    "attempt_failed": "下载尝试 {attempt} 失败: {error}",
+    "waiting_retry": "等待 {wait_time} 秒后重试...",
+    "unexpected_error": "下载过程中出现意外错误: {error}",
+    "all_failed": "文件下载失败，已尝试 {retries} 次"
+  },
+  "species": {
+    "detector": {
+      "empty_genes": "基因列表为空，默认返回人类",
+      "insufficient_genes": "有效基因数量不足 ({count} < {required})，默认返回人类",
+      "detected_human": "检测到人类基因 (大写比例: {ratio:.2f})",
+      "detected_mouse": "检测到小鼠基因 (大写比例: {ratio:.2f})",
+      "unknown_species": "未知物种名称: {species}，默认返回 human"
+    }
+  },
+  "cache": {
+    "init": "缓存目录初始化: {path}",
+    "cleared": "清理了 {count} 个缓存文件"
+  },
+  "analysis": {
+    "starting": "🧬 开始分析基因列表: {genes}",
+    "tissue_type": "🏥 组织类型: {tissue}",
+    "system_prompt_length": "📋 系统 Prompt 长度: {length} 字符",
+    "user_query": "❓ 用户查询: {query}",
+    "iteration": "--- 迭代 {iteration} ---",
+    "current_messages": "当前消息数量",
+    "current_context_length": "当前上下文长度",
+    "context_compression": "📊 {reason}，进行上下文压缩...",
+    "streaming_enabled": "🌊 第{iteration}次迭代，启用流式输出",
+    "ai_response_length": "🤖 AI 响应长度: {length} 字符",
+    "format_validation_failed": "⚠️ 响应格式验证失败: {issues}",
+    "format_validation_passed": "✅ 响应格式验证通过",
+    "analysis_completed": "✅ 分析完成！最终细胞类型: {celltype}",
+    "final_answer_no_celltype": "⚠️ 发现 final_answer 但未找到 celltype 标签",
+    "summary": {
+      "title": "🎯 分析总结:",
+      "total_iterations": "   - 总迭代数: {iterations}",
+      "final_celltype": "   - 最终细胞类型: {celltype}",
+      "tool_calls": "   - 工具调用次数: {count}",
+      "context_summary": "   - 上下文总结: 已在第{threshold}次迭代时执行",
+      "llm_stats": "   - LLM API 调用统计: {total} 次",
+      "success_failure": "   - 成功/失败: {success}/{failure}",
+      "log_file": "   - 日志文件: {file}",
+      "stats_failed": "   - 日志统计获取失败: {error}"
+    }
+  },
+  "openai": {
+    "request": "📤 OpenAI API 请求:",
+    "model": "   🤖 模型: {model}",
+    "message_count": "   💬 消息数量: {count}",
+    "timeout": "   ⏰ 超时时间: {timeout}秒",
+    "streaming": "   🌊 流式输出: {enabled}",
+    "streaming_enabled": "是",
+    "streaming_disabled": "否",
+    "streaming_not_supported": "⚠️ 模型可能不支持流式输出，自动降级到非流式输出",
+    "streaming_start": "🌊 开始流式输出:",
+    "streaming_completed": "✅ 流式输出完成 (共 {chars} 字符)",
+    "streaming_failed": "❌ 流式输出处理失败: {error}",
+    "fallback_to_non_stream": "🔄 降级到非流式输出...",
+    "retry_non_stream": "📤 重新发起非流式请求...",
+    "non_stream_completed": "✅ 非流式请求完成，响应长度: {length} 字符",
+    "response": "📥 OpenAI API 响应:",
+    "response_length": "   📏 响应长度: {length} 字符"
+  },
+  "retry": {
+    "llm_retry": "🔄 重试 LLM 调用 {retry}/{max_retries}",
+    "last_response_issues": "❌ 上次响应问题: {issues}",
+    "retry_logged": "📝 重试调用已记录日志 (第{count}次重试)",
+    "retry_success": "✅ 重试成功！响应格式正确",
+    "retry_failed": "❌ 重试 {count} 失败: {issues}",
+    "max_retries_reached": "❌ 达到最大重试次数，使用最后一次响应"
+  },
+  "context": {
+    "too_long": "🔄 上下文过长，开始生成总结...",
+    "no_history": "⚠️ 没有足够的历史对话需要总结",
+    "summary_logged": "📝 上下文总结已记录日志",
+    "summary_completed": "✅ 上下文总结完成",
+    "original_messages": "   - 原消息数量: {count}",
+    "summarized_messages": "   - 总结后消息数量: {count}",
+    "summary_length": "   - 总结内容长度: {length} 字符",
+    "simple_strategy": "🔧 使用简化策略：保留最近10条消息"
+  },
+  "content": {
+    "length_ok": "📝 内容长度: {length} - 保持原样",
+    "length_need_process": "📝 内容长度: {length} - 需要处理",
+    "gene_info_too_long": "🧬 检测到 get_gene_info 结果过长，尝试减少基因数量...",
+    "reduce_genes_success": "✅ 成功减少基因数量，新内容长度: {length}",
+    "reduce_genes_failed": "⚠️ 减少基因数量失败，继续其他处理策略...",
+    "generating_summary": "🔄 内容过长，生成摘要...",
+    "keep_integrity": "🔧 保持完整性, 保持完整性并智能清理内容",
+    "genes_already_few": "🚫 基因数量已经很少，无法进一步减少",
+    "reducing_gene_count": "🔄 减少基因数量: {old} -> {new}",
+    "retained_genes": "📋 保留的基因: {genes}",
+    "recall_success": "✅ 重新调用成功，新内容长度: {length}",
+    "recall_failed": "❌ 重新调用失败",
+    "reduce_error": "❌ 减少基因数量时出错: {error}"
+  },
+  "database": {
+    "cellmarker": {
+      "species_not_exist": "物种 '{species}' 不存在",
+      "tissue_not_exist": "组织 '{tissue}' 在 {species} 中不存在",
+      "celltype_not_exist": "细胞类型 '{celltype}' 在 {species}-{tissue} 中不存在",
+      "enrichment_failed": "CellMarker富集分析失败: {error}",
+      "query_failed": "CellMarker查询失败: {error}",
+      "tissues_failed": "获取CellMarker组织类型失败: {error}",
+      "celltypes_failed": "获取CellMarker细胞类型失败: {error}"
+    },
+    "panglaodb": {
+      "species_not_exist": "物种 '{species}' 不存在",
+      "organ_not_exist": "器官 '{organ}' 在 {species} 中不存在",
+      "celltype_not_exist": "细胞类型 '{celltype}' 在 {species}-{organ} 中不存在",
+      "species_not_supported": "物种 '{species}' 不支持，仅支持 HUMAN 或 MOUSE",
+      "enrichment_failed": "PanglaoDB富集分析失败: {error}",
+      "query_failed": "PanglaoDB查询失败: {error}",
+      "organs_failed": "获取PanglaoDB器官类型失败: {error}",
+      "celltypes_failed": "获取PanglaoDB细胞类型失败: {error}"
+    },
+    "enrichment": {
+      "empty_genes": "基因列表为空",
+      "analysis_failed": "基因富集分析失败: {error}",
+      "no_results": "富集分析未返回任何结果，请检查基因名称或网络连接"
+    }
+  },
+  "errors": {
+    "missing_tissue": "请提供组织类型参数",
+    "missing_organ": "请提供器官类型参数",
+    "all_tissues_not_exist": "所有指定的组织类型都不存在: {tissues}",
+    "all_organs_not_exist": "所有指定的器官类型都不存在: {organs}",
+    "unknown_error": "未知错误"
+  },
+  "client": {
+    "fastmcp": {
+      "starting": "🚀 启动 FastMCP 服务器...",
+      "started": "✅ FastMCP 服务器已启动",
+      "process_exited": "❌ 服务器进程异常退出，退出码: {code}",
+      "error_output": "   错误输出: {output}",
+      "start_failed": "❌ 启动 FastMCP 服务器失败: {error}",
+      "init_failed": "❌ MCP 初始化失败: {response}",
+      "json_parse_failed": "❌ MCP JSON 解析失败: {error}",
+      "request_timeout": "⏰ MCP 请求超时",
+      "request_failed": "❌ MCP 请求失败: {error}",
+      "notification_failed": "❌ 发送通知失败: {error}",
+      "tool_call_failed": "❌ MCP 工具调用失败: {error}",
+      "tool_no_response": "❌ MCP 工具调用无响应",
+      "stopping": "🛑 停止 FastMCP 服务器...",
+      "stopped": "✅ FastMCP 服务器已停止"
+    }
+  },
+  "agent": {
+    "language_set": "🌐 语言已设置为: {language}",
+    "language_not_supported": "⚠️ 不支持的语言: {language}，支持的语言: {supported}",
+    "template_fallback": "⚠️ 使用主模板失败: {error}，使用 fallback 版本",
+    "init_failed": "❌ Agent 初始化失败",
+    "analysis_start": "🔬 开始细胞类型分析..."
+  },
+  "api": {
+    "health_check": "🔍 测试健康检查接口...",
+    "service_status": "✅ 服务状态: {status}, 版本: {version}",
+    "health_check_failed": "❌ 健康检查失败: {error}",
+    "analyzing_genes": "🧬 开始分析基因列表: {genes}",
+    "tissue_type": "🏥 组织类型: {tissue}",
+    "analyzing_wait": "⏳ 正在分析，请耐心等待（最多{timeout}秒）...",
+    "analyzing_wait_no_timeout": "⏳ 正在分析，请耐心等待（无超时限制）...",
+    "analysis_success": "✅ 分析成功!",
+    "inferred_celltype": "📊 推断的细胞类型: {celltype}",
+    "total_iterations": "🔄 总迭代次数: {count}",
+    "analysis_log_entries": "📝 分析日志条目数: {count}",
+    "log_file": "📄 详细日志文件: {path}",
+    "final_llm_output": "🤖 最终LLM输出: {output}...",
+    "analysis_failed": "❌ 分析失败: {error}",
+    "request_timeout": "⏰ 请求超时，分析可能仍在进行中，请查看日志文件",
+    "request_failed": "❌ 分析请求失败: {error}",
+    "usage_example": "🧬 细胞类型分析API使用示例",
+    "service_unavailable": "❌ 服务不可用，请检查API服务是否正常运行",
+    "analysis_complete": "🎉 分析完成!",
+    "received_request": "收到分析请求: 基因列表={genes}...",
+    "request_completed": "分析完成: 成功={success}, 细胞类型={celltype}",
+    "api_error": "API调用发生错误: {error}"
+  },
+  "logger": {
+    "llm": {
+      "log_saved_to": "📝 LLM 日志将保存到: {path}",
+      "request_logged": "📋 已记录 {type} 请求日志",
+      "log_failed": "❌ 记录日志失败: {error}",
+      "summary_failed": "❌ 获取日志摘要失败: {error}"
+    },
+    "api": {
+      "input_genes": "📋 输入基因列表: {genes}",
+      "tissue_type": "🏥 组织类型: {tissue}",
+      "using_model": "🤖 使用模型: {model}",
+      "log_file": "📄 日志文件保存位置: {path}",
+      "analysis_start": "🚀 开始细胞类型分析...",
+      "total_iterations": "   - 总迭代数: {count}",
+      "tool_calls": "   - 工具调用次数: {count}",
+      "analysis_success": "   - 分析成功: {success}",
+      "log_saved": "📄 完整的分析日志已保存至: {path}",
+      "error_log_saved": "📄 错误日志已保存至: {path}",
+      "init_success": "React Agent初始化成功，使用模型: {model}",
+      "init_failed": "React Agent初始化失败",
+      "init_error": "初始化agent时发生错误: {error}",
+      "analysis_error": "分析过程中发生错误: {error}",
+      "cleanup_error": "清理资源时发生错误: {error}"
+    }
+  },
+  "ncbi": {
+    "adapter_init": "NCBI API适配器初始化完成 (优先API: {api})",
+    "datasets_v2": "Datasets v2",
+    "e_utilities": "E-utilities",
+    "symbol_conversion": "使用本地数据库转换 {count} 个基因Symbol为ID (物种: {species})",
+    "conversion_success": "本地转换成功: {success}/{total} 个Symbol",
+    "conversion_failed": "基因Symbol转换失败: {error}",
+    "batch_processing": "处理批次 {batch}: {count} 个基因",
+    "total_retrieved": "总共获取了 {count} 个基因的详细信息",
+    "datasets_failed_switch": "Datasets API失败，切换到E-utilities API",
+    "eutilities_failed_switch": "E-utilities API失败，切换到Datasets API",
+    "trying_datasets": "尝试Datasets API: {count} 个基因",
+    "datasets_success": "Datasets API成功: {success}/{total} 个基因",
+    "datasets_call_failed": "Datasets API调用失败: {error}",
+    "trying_eutilities": "尝试E-utilities API: {count} 个基因",
+    "eutilities_success": "E-utilities API成功: {success}/{total} 个基因",
+    "eutilities_call_failed": "E-utilities API调用失败: {error}",
+    "http_error": "HTTP {code} (尝试 {attempt}/{max_retries})",
+    "request_error": "请求错误 (尝试 {attempt}/{max_retries}): {error}",
+    "datasets_parse_failed": "解析Datasets API响应失败: {error}",
+    "eutilities_parse_failed": "解析E-utilities API响应失败: {error}"
+  },
+  "gene_manager": {
+    "init_complete": "基因信息管理器初始化完成",
+    "processing_species": "开始处理{species}基因信息文件...",
+    "file_exists": "{species}基因信息文件已存在 ({size:.1f} MB)，跳过下载",
+    "download_success": "{species}基因信息文件下载成功 ({size:.1f} MB)",
+    "download_failed": "{species}基因信息文件下载失败",
+    "loading_parsed": "加载已解析的{species}基因映射...",
+    "mapping_loaded": "{species}基因映射加载完成: {count} 个基因",
+    "mapping_load_failed": "加载{species}基因映射失败: {error}，将重新解析",
+    "file_not_exist": "{species}基因信息文件不存在: {path}",
+    "parsing_start": "开始解析{species}基因信息文件...",
+    "file_columns": "文件列名: {header}",
+    "processed_lines": "已处理 {count} 行",
+    "parsing_complete": "解析完成: 处理了 {count} 行",
+    "main_symbols": "主要符号: {count} 个",
+    "alias_mappings": "别名映射: {count} 个",
+    "gene_info": "基因信息: {count} 个",
+    "mapping_built": "{species}基因映射构建完成，已保存到 {path}",
+    "parsing_failed": "解析{species}基因信息文件失败: {error}",
+    "data_not_loaded": "{species}基因映射数据未加载，开始按需加载...",
+    "file_not_exist_downloading": "{species}基因信息文件不存在，正在下载...",
+    "data_load_failed": "{species}基因映射数据加载失败",
+    "conversion_result": "{species}基因转换结果: {success}/{total} ({rate:.1f}%)",
+    "not_found_symbols": "未找到的基因符号: {symbols}",
+    "additional_not_found": "... 以及另外 {count} 个"
+  },
+  "fetcher": {
+    "panglaodb": {
+      "no_cache_downloading": "PanglaoDB数据未找到缓存，开始下载...",
+      "cache_exists": "PanglaoDB数据已存在: {path}",
+      "loading_data": "正在加载PanglaoDB数据: {path}",
+      "original_columns": "PanglaoDB原始列名: {columns}",
+      "mapped_columns": "列名映射后: {columns}",
+      "data_cleaned": "PanglaoDB数据清理完成: {count} 条记录",
+      "sample_data": "示例数据:\n{data}",
+      "species_distribution": "物种分布: {distribution}",
+      "processing_error": "PanglaoDB数据处理错误: {error}",
+      "converting_format": "转换数据为嵌套格式...",
+      "conversion_complete": "嵌套格式转换完成:",
+      "species_count": "  物种数: {count}",
+      "celltype_count": "  细胞类型数: {count}",
+      "gene_records": "  基因记录数: {count}",
+      "format_convert_error": "数据格式转换错误: {error}",
+      "data_saved": "数据已保存到 {path} ({size:.2f} MB)",
+      "processing_start": "=== 开始PanglaoDB数据处理流程 ===",
+      "processing_complete": "=== PanglaoDB数据处理完成 ===",
+      "nested_json_saved": "嵌套JSON数据保存至: {path}",
+      "processing_failed": "PanglaoDB数据处理失败: {error}"
+    },
+    "cellmarker": {
+      "cache_exists": "CellMarker数据已存在: {path}",
+      "cache_exists_2": "CellMarker2数据已存在: {path}",
+      "parsing_data": "解析CellMarker数据: {path}",
+      "original_records": "CellMarker原始数据: {count} 条记录",
+      "parse_error": "处理CellMarker第{idx}行时出错: {error}",
+      "parse_complete": "CellMarker解析完成",
+      "parsing_data_2": "解析CellMarker2数据: {path}",
+      "original_records_2": "CellMarker2原始数据: {count} 条记录",
+      "parse_error_2": "处理CellMarker2第{idx}行时出错: {error}",
+      "parse_complete_2": "CellMarker2解析完成",
+      "merging_data": "合并CellMarker数据...",
+      "merge_complete": "CellMarker合并完成",
+      "data_saved": "数据已保存到 {path} ({size:.2f} MB)"
+    }
+  }
+}

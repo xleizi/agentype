@@ -1,0 +1,64 @@
+# CellType DataProcessor Agent 依赖列表
+
+# 核心MCP框架
+mcp>=1.0.0
+fastmcp>=0.3.0
+
+# Web API框架
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.5.0
+
+# 异步支持
+asyncio-mqtt>=0.16.0
+aiofiles>=23.2.1
+
+# 科学计算和数据处理
+numpy>=1.24.0
+pandas>=2.1.0
+scipy>=1.11.0
+
+# 单细胞数据分析
+scanpy>=1.9.0
+anndata>=0.10.0
+
+# H5文件支持
+h5py>=3.10.0
+tables>=3.9.0
+
+# JSON和配置
+pyyaml>=6.0
+jsonschema>=4.20.0
+
+# 日志和工具
+loguru>=0.7.0
+click>=8.1.0
+rich>=13.7.0
+tqdm>=4.66.0
+
+# 文件操作
+pathlib2>=2.3.7
+filetype>=1.2.0
+
+# 类型检查和验证
+typing-extensions>=4.8.0
+pydantic-settings>=2.1.0
+
+# 开发和测试依赖 (可选)
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+black>=23.11.0
+flake8>=6.1.0
+mypy>=1.7.0
+
+# R接口 (需要R环境)
+# rpy2>=3.5.0  # 可选，用于直接R集成
+
+# 可选的性能优化
+# numba>=0.58.0
+# dask[complete]>=2023.12.0
+
+# 部署相关
+gunicorn>=21.2.0
+docker>=6.1.0

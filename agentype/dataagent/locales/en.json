@@ -1,0 +1,180 @@
+{
+  "mcp": {
+    "import": {
+      "failed": "❌ Failed to import MCP dependencies: {error}",
+      "install_deps": "Please ensure mcp package is installed: pip install mcp",
+      "success": "✅ Successfully imported all MCP dependencies",
+      "current_dir": "📂 Current directory: {path}",
+      "project_root": "📂 Project root: {path}",
+      "python_path": "📂 Python path: {paths}"
+    },
+    "server": {
+      "starting": "🚀 Starting CellType Data Processor MCP Server...",
+      "protocol": "📡 Protocol: MCP (Model Context Protocol)",
+      "tool_count": "🔧 Available tools: 10",
+      "functions": "💼 Functions:",
+      "separator": "============================================================",
+      "tool_list": {
+        "process_rds_file": "  - process_rds_file: Process RDS files",
+        "process_rds_with_json": "  - process_rds_with_json: Process RDS+JSON",
+        "validate_json_only": "  - validate_json_only: Validate JSON files",
+        "convert_csv_to_json": "  - convert_csv_to_json: Convert CSV to JSON",
+        "process_h5_file": "  - process_h5_file: Process H5 files",
+        "process_adata_path": "  - process_adata_path: Process H5AD files",
+        "get_cache_status": "  - get_cache_status: Get cache status",
+        "validate_file_type": "  - validate_file_type: File type identification",
+        "validate_json_only": "  - validate_json_only: JSON file specific validation",
+        "list_processing_functions": "  - list_processing_functions: List all functions"
+      }
+    }
+  },
+  "agent": {
+    "log": {
+      "initialized": "DataProcessor Agent initialized",
+      "stopped": "DataProcessor Agent stopped",
+      "starting_task": "Starting task {task_id}: {input_data}",
+      "analyzing_input": "[{task_id}] Starting input analysis",
+      "analysis_complete": "[{task_id}] Input analysis complete: scenario{scenario} ({scenario_name})",
+      "executing_processing": "[{task_id}] Starting processing scenario {scenario}",
+      "tool_call_complete": "[{task_id}] Tool call complete: {success}",
+      "finalizing_results": "[{task_id}] Starting result finalization",
+      "results_complete": "[{task_id}] Result finalization complete",
+      "task_complete": "Task {task_id} processing complete"
+    },
+    "warning": "AI client unavailable, using rule-based processing"
+  },
+  "file": {
+    "validation": {
+      "failed": "File type validation failed: {error}",
+      "rds_failed": "RDS file validation failed: {error}",
+      "json_failed": "JSON file validation failed: {error}",
+      "csv_failed": "CSV file validation failed: {error}",
+      "h5_failed": "H5 file validation failed: {error}",
+      "h5ad_failed": "H5AD file validation failed: {error}"
+    },
+    "processing": {
+      "rds_start": "Starting RDS file processing: {file}",
+      "rds_complete": "RDS file processing complete: {success}",
+      "rds_json_start": "Starting RDS+JSON processing: {rds_file}, {json_file}",
+      "rds_json_complete": "RDS+JSON processing complete: {success}",
+      "json_start": "Starting JSON file validation: {file}",
+      "json_complete": "JSON validation complete: {valid}",
+      "csv_start": "Starting CSV file conversion: {file}",
+      "csv_complete": "CSV conversion complete: {success}",
+      "h5_start": "Starting H5 file processing: {file}",
+      "h5_complete": "H5 file processing complete: {success}",
+      "adata_start": "Starting AnnData file processing: {file}",
+      "adata_complete": "AnnData file processing complete: {success}"
+    },
+    "error": {
+      "processing_failed": "Error processing {file_type} file: {error}",
+      "validation_failed": "Error validating {file_type} file: {error}",
+      "type_recognition_failed": "File type recognition failed: {error}",
+      "unsupported_format": "Unsupported input data format",
+      "missing_primary_input": "Primary input file not provided",
+      "no_valid_ids": "No valid gene IDs found",
+      "scenario_not_supported": "Unsupported processing scenario: {scenario}",
+      "json_required_for_rds": "RDS+JSON scenario requires JSON file",
+      "tool_call_failed": "Tool call failed: {error}"
+    }
+  },
+  "cache": {
+    "status": {
+      "get_failed": "Failed to get cache status: {error}"
+    },
+    "info": {
+      "dir": "📂 Cache directory: {dir}",
+      "config": "⚙️ Config: p-value threshold={pval_threshold}, max retries={max_retries}"
+    }
+  },
+  "easyscfpy": {
+    "not_available": "easySCFpy not available: {error}",
+    "checking": "Checking easySCFpy availability"
+  },
+  "processing": {
+    "task_failed": "Error processing task {task_id}: {error}",
+    "results": {
+      "success": "Processing successful",
+      "failed": "Processing failed",
+      "json_validated": "JSON file validation passed, ready to use",
+      "no_processing_required": "JSON file validation passed, no further processing required"
+    }
+  },
+  "adata": {
+    "object_processing_not_supported": "AnnData object processing requires special object transfer mechanism",
+    "use_path_alternative": "Please use process_adata_path to process .h5ad files, or transfer object reference via other methods",
+    "suggested_alternatives": "Suggested alternatives"
+  },
+  "content": {
+    "length_ok": "📝 Content length: {length} - keeping original",
+    "length_too_long": "📝 Content length: {length} - needs processing",
+    "reducing_data": "🧬 Detected result too long, trying to reduce data amount...",
+    "reduction_success": "✅ Successfully reduced data amount, new content length: {length}",
+    "reduction_failed": "⚠️ Failed to reduce data amount, continuing other processing strategies...",
+    "generating_summary": "🔄 Content too long, generating summary...",
+    "keeping_integrity": "🔧 Keeping integrity, intelligent content cleaning",
+    "reduction_error": "❌ Error reducing data amount: {error}",
+    "gene_data_reduced": "Due to original result being too long, automatically reduced gene count from {original} to {reduced}",
+    "marker_genes_reduced": "Due to original result being too long, automatically reduced marker gene count from {original} to {reduced}",
+    "gene_reduction_error": "❌ Error reducing gene count: {error}",
+    "csv_data_reduced": "Due to original result being too long, automatically reduced CSV data amount",
+    "csv_reduction_error": "❌ Error reducing CSV data: {error}",
+    "ai_summary_prefix": "[AI Summary] ",
+    "summarization_failed": "Content summarization failed: {error}"
+  },
+  "validation": {
+    "missing_thought_tag": "Missing <thought> tag",
+    "missing_action_or_final_answer": "Missing <action> or <final_answer> tag",
+    "unclosed_thought_tag": "Unclosed <thought> tag",
+    "unclosed_action_tag": "Unclosed <action> tag",
+    "unclosed_final_answer_tag": "Unclosed <final_answer> tag",
+    "unexpected_observation_tag": "Should not contain <observation> tag",
+    "json_decode_error": "JSON decode error: {error}",
+    "empty_file_path": "File path is empty",
+    "invalid_path_format": "Invalid path format: {error}",
+    "file_not_exist": "File does not exist: {path}",
+    "path_is_directory": "Path is directory not file: {path}",
+    "empty_gene_list": "Gene list is empty",
+    "no_valid_genes": "No valid genes found",
+    "invalid_gene_format": "Invalid gene name format: {genes}",
+    "invalid_scenario": "Invalid processing scenario: {scenario}, valid scenarios: {valid}"
+  },
+  "scenario": {
+    "rds_file_only": "RDS file only - Run FindAllMarkers and convert to H5",
+    "rds_with_json": "RDS + JSON - Read JSON and convert RDS to H5",
+    "json_only": "JSON validation - Direct return",
+    "csv_to_json": "CSV to JSON conversion",
+    "h5_easyscf": "easySCF H5 to JSON",
+    "adata_object": "AnnData object to JSON",
+    "adata_path": "AnnData path to JSON",
+    "unknown": "Unknown scenario"
+  },
+  "data_analysis": {
+    "format_validation_failed": "⚠️ Response format validation failed: {issues}",
+    "format_validation_passed": "✅ Response format validation passed"
+  },
+  "retry": {
+    "llm_retry": "🔄 LLM retry {retry}/{max_retries} times",
+    "last_response_issues": "Last response issues: {issues}",
+    "retry_logged": "Retry #{count} has been logged",
+    "retry_success": "✅ Retry successful",
+    "retry_failed": "❌ Retry #{count} failed, issues: {issues}",
+    "max_retries_reached": "❌ Maximum retry attempts reached"
+  },
+  "context": {
+    "too_long": "📊 Conversation history too long, compressing context...",
+    "no_history": "📝 No history to summarize",
+    "summary_completed": "✅ Context summary completed",
+    "original_messages": "Original message count: {count}",
+    "summarized_messages": "Summarized message count: {count}",
+    "summary_length": "Summary length: {length} characters",
+    "simple_strategy": "📝 Using simple strategy, keeping last 10 messages",
+    "summary_logged": "📋 Context summary request has been logged"
+  },
+  "llm_logger": {
+    "write_failed": "Failed to write LLM log: {error}",
+    "request_success": "LLM request success: {type}, duration: {duration:.2f}s",
+    "request_failed": "LLM request failed: {type}, error: {error}",
+    "session_end": "Session ended - total requests: {total_requests}, success: {success_count}, failed: {error_count}, total tokens: {total_tokens}"
+  }
+}

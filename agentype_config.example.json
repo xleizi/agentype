@@ -1,0 +1,35 @@
+{
+  "llm": {
+    "api_key": "your-api-key-here",
+    "api_base": "https://api.openai.com/v1",
+    "model": "gpt-4o",
+    "temperature": 0.7,
+    "max_tokens": 4096,
+    "timeout": 120
+  },
+  "project": {
+    "language": "zh",
+    "enable_streaming": true,
+    "enable_logging": true,
+    "log_level": "INFO",
+    "output_dir": "./outputs"
+  },
+  "agents": {
+    "mainagent": {
+      "max_iterations": 20,
+      "enable_context_summary": true
+    },
+    "subagent": {
+      "cache_enabled": true,
+      "cache_ttl": 86400
+    },
+    "dataagent": {
+      "default_format": "h5ad",
+      "qc_enabled": false
+    },
+    "appagent": {
+      "default_method": "celltypist",
+      "default_species": "human"
+    }
+  }
+}

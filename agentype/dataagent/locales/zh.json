@@ -1,0 +1,255 @@
+{
+  "mcp": {
+    "import": {
+      "failed": "❌ 导入MCP依赖失败: {error}",
+      "install_deps": "请确保安装了mcp包: pip install mcp",
+      "success": "✅ 成功导入所有MCP依赖",
+      "current_dir": "📂 当前目录: {path}",
+      "project_root": "📂 项目根目录: {path}",
+      "python_path": "📂 Python路径: {paths}"
+    },
+    "server": {
+      "starting": "🚀 启动CellType Data Processor MCP服务器...",
+      "protocol": "📡 协议: MCP (Model Context Protocol)",
+      "tool_count": "🔧 可用工具: 10个",
+      "functions": "💼 功能:",
+      "separator": "============================================================",
+      "tool_list": {
+        "process_rds_file": "  - process_rds_file: 处理RDS文件",
+        "process_rds_with_json": "  - process_rds_with_json: 处理RDS+JSON",
+        "validate_json_only": "  - validate_json_only: 验证JSON文件",
+        "convert_csv_to_json": "  - convert_csv_to_json: CSV转JSON",
+        "process_h5_file": "  - process_h5_file: 处理H5文件",
+        "process_adata_path": "  - process_adata_path: 处理H5AD文件",
+        "get_cache_status": "  - get_cache_status: 获取缓存状态",
+        "validate_file_type": "  - validate_file_type: 文件类型识别",
+        "list_processing_functions": "  - list_processing_functions: 列出所有函数"
+      }
+    }
+  },
+  "analysis": {
+    "starting": "🧬 开始处理数据文件: {files}",
+    "system_prompt_length": "📋 系统 Prompt 长度: {length} 字符",
+    "user_query": "❓ 用户查询: {query}",
+    "iteration": "--- 迭代 {iteration} ---",
+    "current_messages": "当前消息数量",
+    "current_context_length": "当前上下文长度",
+    "context_compression": "📊 {reason}，进行上下文压缩...",
+    "streaming_enabled": "🌊 第{iteration}次迭代，启用流式输出",
+    "ai_response_length": "🤖 AI 响应长度: {length} 字符",
+    "format_validation_failed": "⚠️ 响应格式验证失败: {issues}",
+    "format_validation_passed": "✅ 响应格式验证通过",
+    "analysis_completed": "✅ 处理完成！处理结果: {result}",
+    "final_answer_no_result": "⚠️ 发现 final_answer 但未找到结果标签",
+    "summary": {
+      "title": "🎯 处理总结:",
+      "total_iterations": "   - 总迭代数: {iterations}",
+      "final_result": "   - 最终结果: {result}",
+      "tool_calls": "   - 工具调用次数: {count}",
+      "context_summary": "   - 上下文总结: 已在第{threshold}次迭代时执行",
+      "llm_stats": "   - LLM API 调用统计: {total} 次",
+      "success_failure": "   - 成功/失败: {success}/{failure}",
+      "log_file": "   - 日志文件: {file}",
+      "stats_failed": "   - 日志统计获取失败: {error}"
+    }
+  },
+  "data_analysis": {
+    "starting": "🧬 开始处理数据文件: {files}",
+    "system_prompt_length": "📋 系统 Prompt 长度: {length} 字符",
+    "user_query": "❓ 用户查询: {query}",
+    "iteration": "--- 迭代 {iteration} ---",
+    "current_messages": "当前消息数量",
+    "current_context_length": "当前上下文长度",
+    "streaming_enabled": "🌊 第{iteration}次迭代，启用流式输出",
+    "ai_response_length": "🤖 AI 响应长度: {length} 字符",
+    "format_validation_failed": "⚠️ 响应格式验证失败: {issues}",
+    "format_validation_passed": "✅ 响应格式验证通过",
+    "analysis_completed": "✅ 处理完成！处理结果: {result}",
+    "summary": {
+      "title": "🎯 处理总结:",
+      "total_iterations": "   - 总迭代数: {iterations}",
+      "final_result": "   - 最终结果: {result}",
+      "tool_calls": "   - 工具调用次数: {count}",
+      "llm_stats": "   - LLM API 调用统计: {total} 次",
+      "success_failure": "   - 成功/失败: {success}/{failure}",
+      "log_file": "   - 日志文件: {file}"
+    }
+  },
+  "openai": {
+    "request": "📤 OpenAI API 请求:",
+    "model": "   🤖 模型: {model}",
+    "message_count": "   💬 消息数量: {count}",
+    "timeout": "   ⏰ 超时时间: {timeout}秒",
+    "streaming": "   🌊 流式输出: {enabled}",
+    "streaming_enabled": "是",
+    "streaming_disabled": "否",
+    "streaming_not_supported": "⚠️ 模型可能不支持流式输出，自动降级到非流式输出",
+    "streaming_start": "🌊 开始流式输出:",
+    "streaming_completed": "✅ 流式输出完成 (共 {chars} 字符)",
+    "streaming_failed": "❌ 流式输出处理失败: {error}",
+    "fallback_to_non_stream": "🔄 降级到非流式输出...",
+    "retry_non_stream": "📤 重新发起非流式请求...",
+    "non_stream_completed": "✅ 非流式请求完成，响应长度: {length} 字符",
+    "response": "📥 OpenAI API 响应:",
+    "response_length": "   📏 响应长度: {length} 字符"
+  },
+  "tools": {
+    "call": {
+      "calling": "🔧 调用工具: {name}({params})",
+      "success": "✅ 工具调用成功，内容长度: {length} 字符",
+      "failed": "❌ 工具调用失败",
+      "no_action": "❌ 未找到有效的 action，停止处理",
+      "no_action_retry": "🔄 未找到有效action，开始重试..."
+    }
+  },
+  "agent": {
+    "log": {
+      "initialized": "DataProcessor Agent已初始化",
+      "stopped": "DataProcessor Agent已停止",
+      "starting_task": "开始处理任务 {task_id}: {input_data}",
+      "analyzing_input": "[{task_id}] 开始分析输入数据",
+      "analysis_complete": "[{task_id}] 输入分析完成: 场景{scenario} ({scenario_name})",
+      "executing_processing": "[{task_id}] 开始执行处理场景 {scenario}",
+      "tool_call_complete": "[{task_id}] 工具调用完成: {success}",
+      "finalizing_results": "[{task_id}] 开始整理结果",
+      "results_complete": "[{task_id}] 结果整理完成",
+      "task_complete": "任务 {task_id} 处理完成"
+    },
+    "warning": "AI客户端不可用，将使用基于规则的处理",
+    "language_set": "🌐 语言已设置为: {language}",
+    "language_not_supported": "⚠️ 不支持的语言: {language}，支持的语言: {supported}",
+    "template_fallback": "⚠️ 使用主模板失败: {error}，使用 fallback 版本",
+    "init_failed": "❌ Agent 初始化失败",
+    "analysis_start": "🔬 开始数据处理分析..."
+  },
+  "file": {
+    "validation": {
+      "failed": "文件类型验证失败: {error}",
+      "rds_failed": "RDS文件验证失败: {error}",
+      "json_failed": "JSON文件验证失败: {error}",
+      "csv_failed": "CSV文件验证失败: {error}",
+      "h5_failed": "H5文件验证失败: {error}",
+      "h5ad_failed": "H5AD文件验证失败: {error}"
+    },
+    "processing": {
+      "rds_start": "开始处理RDS文件: {file}",
+      "rds_complete": "RDS文件处理完成: {success}",
+      "rds_json_start": "开始处理RDS+JSON: {rds_file}, {json_file}",
+      "rds_json_complete": "RDS+JSON处理完成: {success}",
+      "json_start": "开始验证JSON文件: {file}",
+      "json_complete": "JSON验证完成: {valid}",
+      "csv_start": "开始转换CSV文件: {file}",
+      "csv_complete": "CSV转换完成: {success}",
+      "h5_start": "开始处理H5文件: {file}",
+      "h5_complete": "H5文件处理完成: {success}",
+      "adata_start": "开始处理AnnData文件: {file}",
+      "adata_complete": "AnnData文件处理完成: {success}"
+    },
+    "error": {
+      "processing_failed": "处理{file_type}文件时出错: {error}",
+      "validation_failed": "验证{file_type}文件时出错: {error}",
+      "type_recognition_failed": "文件类型识别失败: {error}",
+      "unsupported_format": "不支持的输入数据格式",
+      "missing_primary_input": "未提供主要输入文件",
+      "no_valid_ids": "没有有效的基因ID",
+      "scenario_not_supported": "不支持的处理场景: {scenario}",
+      "json_required_for_rds": "RDS+JSON场景需要提供JSON文件",
+      "tool_call_failed": "工具调用失败: {error}"
+    }
+  },
+  "cache": {
+    "status": {
+      "get_failed": "获取缓存状态失败: {error}"
+    },
+    "info": {
+      "dir": "📂 缓存目录: {dir}",
+      "config": "⚙️ 配置: p值阈值={pval_threshold}, 最大重试={max_retries}"
+    }
+  },
+  "easyscfpy": {
+    "not_available": "easySCFpy不可用: {error}",
+    "checking": "检查easySCFpy可用性"
+  },
+  "processing": {
+    "task_failed": "处理任务 {task_id} 时出错: {error}",
+    "results": {
+      "success": "处理成功",
+      "failed": "处理失败",
+      "json_validated": "JSON文件验证通过，可直接使用",
+      "no_processing_required": "JSON文件验证通过，无需其他处理"
+    }
+  },
+  "adata": {
+    "object_processing_not_supported": "AnnData对象处理需要特殊的对象传递机制",
+    "use_path_alternative": "请使用process_adata_path处理.h5ad文件，或通过其他方式传递对象引用",
+    "suggested_alternatives": "建议的替代方案"
+  },
+  "content": {
+    "length_ok": "📝 内容长度: {length} - 保持原样",
+    "length_too_long": "📝 内容长度: {length} - 需要处理",
+    "reducing_data": "🧬 检测到数据结果过长，尝试减少数据量...",
+    "reduction_success": "✅ 成功减少数据量，新内容长度: {length}",
+    "reduction_failed": "⚠️ 减少数据量失败，继续其他处理策略...",
+    "generating_summary": "🔄 内容过长，生成摘要...",
+    "keeping_integrity": "🔧 保持完整性，智能清理内容",
+    "reduction_error": "❌ 减少数据量时出错: {error}",
+    "gene_data_reduced": "由于原始结果过长，已自动减少基因数量从 {original} 个到 {reduced} 个",
+    "marker_genes_reduced": "由于原始结果过长，已自动减少标记基因数量从 {original} 个到 {reduced} 个",
+    "gene_reduction_error": "❌ 减少基因数量时出错: {error}",
+    "csv_data_reduced": "由于原始结果过长，已自动减少CSV数据量",
+    "csv_reduction_error": "❌ 减少CSV数据时出错: {error}",
+    "ai_summary_prefix": "[AI摘要] ",
+    "summarization_failed": "内容摘要失败: {error}"
+  },
+  "validation": {
+    "missing_thought_tag": "缺少 <thought> 标签",
+    "missing_action_or_final_answer": "缺少 <action> 或 <final_answer> 标签",
+    "unclosed_thought_tag": "<thought> 标签未闭合",
+    "unclosed_action_tag": "<action> 标签未闭合",
+    "unclosed_final_answer_tag": "<final_answer> 标签未闭合",
+    "unexpected_observation_tag": "不应该包含 <observation> 标签",
+    "json_decode_error": "JSON解析错误: {error}",
+    "empty_file_path": "文件路径为空",
+    "invalid_path_format": "路径格式错误: {error}",
+    "file_not_exist": "文件不存在: {path}",
+    "path_is_directory": "路径是目录而非文件: {path}",
+    "empty_gene_list": "基因列表为空",
+    "no_valid_genes": "没有有效的基因",
+    "invalid_gene_format": "无效的基因名格式: {genes}",
+    "invalid_scenario": "无效的处理场景: {scenario}, 有效场景: {valid}"
+  },
+  "scenario": {
+    "rds_file_only": "RDS文件仅 - 运行FindAllMarkers并转换为H5",
+    "rds_with_json": "RDS + JSON - 读取JSON并转换RDS为H5",
+    "json_only": "JSON验证 - 直接返回",
+    "csv_to_json": "CSV转JSON转换",
+    "h5_easyscf": "easySCF H5转JSON",
+    "adata_object": "AnnData对象转JSON",
+    "adata_path": "AnnData路径转JSON",
+    "unknown": "未知场景"
+  },
+  "retry": {
+    "llm_retry": "🔄 LLM重试 {retry}/{max_retries} 次",
+    "last_response_issues": "上次响应问题: {issues}",
+    "retry_logged": "第{count}次重试已记录日志",
+    "retry_success": "✅ 重试成功",
+    "retry_failed": "❌ 第{count}次重试失败，问题: {issues}",
+    "max_retries_reached": "❌ 已达到最大重试次数"
+  },
+  "context": {
+    "too_long": "📊 对话历史过长，进行上下文压缩...",
+    "no_history": "📝 没有需要总结的历史记录",
+    "summary_completed": "✅ 上下文总结完成",
+    "original_messages": "原始消息数: {count}",
+    "summarized_messages": "压缩后消息数: {count}",
+    "summary_length": "总结长度: {length} 字符",
+    "simple_strategy": "📝 使用简单策略保留最近10条消息",
+    "summary_logged": "📋 上下文总结请求已记录日志"
+  },
+  "llm_logger": {
+    "write_failed": "写入LLM日志失败: {error}",
+    "request_success": "LLM请求成功: {type}, 耗时: {duration:.2f}秒",
+    "request_failed": "LLM请求失败: {type}, 错误: {error}",
+    "session_end": "会话结束 - 总请求: {total_requests}, 成功: {success_count}, 失败: {error_count}, 总tokens: {total_tokens}"
+  }
+}

@@ -1,0 +1,281 @@
+{
+  "mcp": {
+    "server": {
+      "starting": "🚀 Starting CellType App Agent MCP Server...",
+      "protocol": "📡 MCP Protocol: stdio",
+      "tool_count": "🔧 Tool Count: 13 tools",
+      "functions": "🧬 Cell Type Annotation Tool List:",
+      "tool_list": {
+        "get_celldx_projects_info_tool": "   1️⃣  get_celldx_projects_info_tool - Get celldx dataset information",
+        "download_celldx_dataset_tool": "   2️⃣  download_celldx_dataset_tool - Download celldx dataset",
+        "singleR_annotate_tool": "   3️⃣  singleR_annotate_tool - SingleR cell type annotation",
+        "get_sctype_tissues_tool": "   4️⃣  get_sctype_tissues_tool - Get scType tissue types",
+        "sctype_annotate_tool": "   5️⃣  sctype_annotate_tool - scType cell type annotation",
+        "get_celltypist_models_tool": "   6️⃣  get_celltypist_models_tool - Get CellTypist models",
+        "celltypist_annotate_tool": "   7️⃣  celltypist_annotate_tool - CellTypist cell type annotation",
+        "celltype_annotation_pipeline": "   8️⃣  celltype_annotation_pipeline - Unified annotation pipeline",
+        "get_all_output_file_paths": "   9️⃣  get_all_output_file_paths - Get standardized file paths",
+        "detect_species_from_h5ad_tool": "   🔟  detect_species_from_h5ad_tool - Detect species from H5AD file",
+        "detect_species_from_rds_tool": "   1️⃣1️⃣ detect_species_from_rds_tool - Detect species from RDS file",
+        "detect_species_from_marker_json_tool": "   1️⃣2️⃣ detect_species_from_marker_json_tool - Detect species from JSON file",
+        "validate_marker_json_tool": "   1️⃣3️⃣ validate_marker_json_tool - Validate marker gene JSON file"
+      },
+      "separator": "════════════════════════════════════════════════════════════"
+    },
+    "import": {
+      "failed": "Failed to import dependencies: {error}",
+      "install_deps": "Please check MCP package installation: pip install mcp",
+      "current_dir": "Current working directory: {path}",
+      "project_root": "Project root directory: {path}",
+      "python_path": "Python path: {paths}"
+    }
+  },
+  "annotation": {
+    "phase": {
+      "phase1": "Phase 1: Input Validation and Preprocessing",
+      "phase2": "Phase 2: SingleR Annotation Process", 
+      "phase3": "Phase 3: scType Annotation Process",
+      "phase4": "Phase 4: CellTypist Annotation Process",
+      "phase5": "Phase 5: Result Integration"
+    },
+    "step": {
+      "1": "Input file validation",
+      "2": "Species detection",
+      "3": "Get celldx dataset information",
+      "4": "Smart dataset selection",
+      "5": "Download reference dataset",
+      "6": "Execute SingleR annotation",
+      "7": "Get scType tissue types",
+      "8": "Tissue type matching",
+      "9": "Execute scType annotation",
+      "10": "Get CellTypist models",
+      "11": "Smart model selection",
+      "12": "Execute CellTypist annotation",
+      "13": "Result integration"
+    },
+    "method": {
+      "singler": {
+        "name": "SingleR",
+        "description": "Reference dataset-based cell type annotation",
+        "starting": "Starting SingleR annotation...",
+        "completed": "SingleR annotation completed",
+        "failed": "SingleR annotation failed"
+      },
+      "sctype": {
+        "name": "scType",
+        "description": "Tissue-specific marker gene-based cell type annotation",
+        "starting": "Starting scType annotation...",
+        "completed": "scType annotation completed",
+        "failed": "scType annotation failed"
+      },
+      "celltypist": {
+        "name": "CellTypist",
+        "description": "Machine learning model-based cell type annotation",
+        "starting": "Starting CellTypist annotation...",
+        "completed": "CellTypist annotation completed",
+        "failed": "CellTypist annotation failed"
+      }
+    },
+    "pipeline": {
+      "starting": "🚀 Starting complete cell type annotation pipeline",
+      "completed": "🎉 Complete annotation pipeline finished",
+      "summary": "📊 Annotation Pipeline Execution Summary",
+      "success_rate": "Success rate: {rate}",
+      "all_success": "All methods executed successfully!",
+      "partial_success": "Most methods executed successfully",
+      "mostly_failed": "Most methods failed to execute"
+    }
+  },
+  "species": {
+    "detection": {
+      "from_h5ad": "Detecting species from H5AD file",
+      "from_rds": "Detecting species from RDS file", 
+      "from_json": "Detecting species from marker gene JSON file",
+      "detected": "Detected species: {species}",
+      "confidence": "Confidence: {confidence}",
+      "default_fallback": "Unable to detect species, using default: {species}",
+      "human": "Human",
+      "mouse": "Mouse"
+    }
+  },
+  "file": {
+    "validation": {
+      "rds_valid": "RDS file validation passed",
+      "h5ad_valid": "H5AD file validation passed",
+      "json_valid": "JSON file validation passed",
+      "file_not_found": "File not found: {path}",
+      "invalid_format": "Invalid file format: {path}",
+      "path_standardized": "File path standardized"
+    },
+    "processing": {
+      "reading": "Reading file: {path}",
+      "writing": "Writing file: {path}",
+      "completed": "File processing completed: {path}"
+    }
+  },
+  "dataset": {
+    "celldx": {
+      "downloading": "Downloading celldx dataset: {name}",
+      "download_completed": "Dataset download completed: {name}",
+      "download_failed": "Dataset download failed: {name}",
+      "info_retrieved": "Successfully retrieved celldx dataset information",
+      "selection": "Smart dataset selection: {name}"
+    },
+    "sctype": {
+      "tissues_retrieved": "Successfully retrieved scType tissue types",
+      "tissue_matched": "Tissue type matched: {tissue}",
+      "tissue_selection": "Smart tissue type selection: {tissue}"
+    },
+    "celltypist": {
+      "models_retrieved": "Successfully retrieved CellTypist model list",
+      "model_selected": "Smart model selection: {model}",
+      "auto_detection": "Auto species detection enabled"
+    }
+  },
+  "results": {
+    "integration": {
+      "starting": "Starting result integration...",
+      "comparing": "Comparing annotation results from three methods",
+      "consensus": "Consensus analysis completed",
+      "recommendation": "Generating final recommendation",
+      "completed": "Result integration completed"
+    },
+    "summary": {
+      "total_clusters": "Total clusters: {count}",
+      "consensus_clusters": "Consensus clusters: {count}",
+      "consensus_rate": "Consensus rate: {rate}",
+      "high_confidence": "High confidence clusters: {count}",
+      "methods_used": "Methods used: {methods}"
+    }
+  },
+  "validation": {
+    "missing_thought_tag": "Missing <thought> tag",
+    "missing_action_or_final_answer": "Missing <action> or <final_answer> tag",
+    "unclosed_thought_tag": "Unclosed <thought> tag",
+    "unclosed_action_tag": "Unclosed <action> tag",
+    "unclosed_final_answer_tag": "Unclosed <final_answer> tag",
+    "unexpected_observation_tag": "Should not contain <observation> tag",
+    "json_decode_error": "JSON parsing error: {error}",
+    "empty_file_path": "File path is empty",
+    "file_not_exist": "File does not exist: {path}",
+    "path_is_directory": "Path is a directory, not a file: {path}",
+    "invalid_path_format": "Invalid path format: {error}",
+    "invalid_file_extension": "Invalid file extension: {extension}, expected: {expected}",
+    "no_input_files_provided": "No input files provided",
+    "invalid_annotation_method": "Invalid annotation method: {method}, valid options: {valid}",
+    "empty_species": "Species information is empty",
+    "unsupported_species": "Unsupported species: {species}, supported species: {supported}",
+    "tissue_type_optional": "Tissue type is optional",
+    "invalid_pval_threshold": "Invalid p-value threshold: {threshold}",
+    "output_dir_not_exist": "Output directory does not exist: {dir}",
+    "invalid_output_path": "Invalid output path: {error}",
+    "invalid_cache_dir": "Invalid cache directory: {dir}, error: {error}",
+    "marker_json_not_dict": "Marker gene JSON file is not in dictionary format",
+    "marker_json_no_genes": "Marker gene JSON file contains no gene information",
+    "invalid_genes_in_cluster": "Invalid genes in cluster {cluster}: {genes}"
+  },
+  "annotation_method": {
+    "singler_desc": "SingleR - Reference dataset-based cell type annotation",
+    "sctype_desc": "scType - Tissue-specific marker gene-based annotation",
+    "celltypist_desc": "CellTypist - Machine learning model-based annotation",
+    "pipeline_desc": "Complete pipeline - Comprehensive annotation integrating three methods",
+    "unknown": "Unknown annotation method"
+  },
+  "content": {
+    "length_ok": "Content length is normal: {length} characters",
+    "length_too_long": "Content is too long: {length} characters",
+    "reducing_annotation_data": "Reducing annotation data volume...",
+    "reduction_success": "Data reduction successful, new length: {length} characters",
+    "reduction_failed": "Data reduction failed",
+    "generating_summary": "Generating AI summary...",
+    "keeping_integrity": "Keeping content integrity",
+    "reduction_error": "Error occurred during data reduction: {error}",
+    "annotation_ai_summary_prefix": "📄 AI Summary:\n",
+    "summarization_failed": "AI summary generation failed: {error}"
+  },
+  "error": {
+    "general": "Error occurred: {error}",
+    "file_not_found": "File not found: {path}",
+    "invalid_input": "Invalid input: {input}",
+    "processing_failed": "Processing failed: {reason}",
+    "network_error": "Network error: {error}",
+    "permission_denied": "Permission denied: {path}"
+  },
+  "success": {
+    "completed": "Operation completed",
+    "file_created": "File created: {path}",
+    "annotation_completed": "Annotation completed",
+    "pipeline_success": "Pipeline execution successful"
+  },
+  "openai": {
+    "request": "Sending OpenAI request...",
+    "model": "Model: {model}",
+    "message_count": "Message count: {count}",
+    "timeout": "Timeout: {timeout}s",
+    "streaming": "Streaming: {enabled}",
+    "streaming_enabled": "enabled",
+    "streaming_disabled": "disabled",
+    "streaming_start": "Streaming started",
+    "streaming_completed": "Streaming completed ({chars} chars)",
+    "streaming_not_supported": "Model does not support streaming; falling back",
+    "streaming_failed": "Streaming failed: {error}",
+    "fallback_to_non_stream": "Fallback to non-streaming...",
+    "retry_non_stream": "Retrying non-streaming request",
+    "non_stream_completed": "Non-streaming response completed (length {length})",
+    "response": "Received model response",
+    "response_length": "Response length: {length}"
+  },
+  "analysis": {
+    "iteration": "Iteration {iter}/{max}",
+    "system_prompt_length": "System prompt length: {length}",
+    "user_query": "User query: {query}",
+    "analysis_completed": "Analysis completed (final_answer preview): {celltype}",
+    "final_answer_no_celltype": "No content parsed from final_answer",
+    "summary": {
+      "title": "📊 Annotation Summary",
+      "total_iterations": "Total iterations: {iterations}",
+      "tool_calls": "Tool calls: {count}",
+      "context_summary": "Context summarized after iteration {threshold}",
+      "llm_stats": "LLM total requests: {total}",
+      "success_failure": "Success: {success}, Failure: {failure}",
+      "log_file": "Log file: {file}",
+      "stats_failed": "Failed to collect stats: {error}"
+    }
+  },
+  "tools": {
+    "call": {
+      "calling": "🔧 Calling tool: {name}({params})",
+      "success": "✅ Tool executed successfully, length: {length}",
+      "failed": "❌ Tool call failed",
+      "no_action": "⚠️ No actionable tool step"
+    }
+  },
+  "agent": {
+    "language_set": "Language switched to: {language}",
+    "language_not_supported": "Unsupported language: {language}, supported: {supported}",
+    "template_fallback": "Failed to load system prompt template, using fallback. Error: {error}",
+    "analysis_start": "Cell type annotation started"
+  },
+  "retry": {
+    "llm_retry": "Response invalid; correction retry {retry}/{max_retries}...",
+    "last_response_issues": "Issues in last response: {issues}",
+    "retry_logged": "Retry {count} logged",
+    "retry_success": "Correction retry succeeded",
+    "retry_failed": "Correction retry failed (#{count}), issues: {issues}",
+    "max_retries_reached": "Max retries reached"
+  },
+  "context": {
+    "too_long": "Context is too long; summarizing...",
+    "no_history": "No history to summarize; skipping",
+    "summary_logged": "Context summarization request logged",
+    "summary_completed": "Context summarization completed",
+    "original_messages": "Original message count: {count}",
+    "summarized_messages": "Summarized message count: {count}",
+    "summary_length": "Summary length: {length}",
+    "simple_strategy": "Summarization failed; using simple recent-history strategy"
+  },
+  "validation": {
+    "response_invalid": "Response format invalid; preparing correction retry"
+  }
+}
+}
