@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agentype"
-version = "1.0.1"
+version = "1.1.0"
 authors = [
     { name = "CellType Agent Team", email = "contact@agentype.com" },
 ]
